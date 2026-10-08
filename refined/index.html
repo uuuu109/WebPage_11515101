@@ -3,402 +3,2790 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="綠天咖啡以小批次烘焙與手沖，讓每一支精品咖啡豆的產地風土清晰抵達杯中。">
-  <title>綠天咖啡｜從產地，到杯中的一片綠</title>
+  <meta name="description" content="清蒸魚｜現撈清蒸鯖魚專賣店。嚴選挪威冰海與南方澳頂級鯖魚，古法杉木蒸籠98°C恆溫活汽蒸煮，鎖住豐沛Omega-3與純粹鮮汁。專為重視品質的消費者打造的極致海味。">
+  <meta name="keywords" content="清蒸魚, 清蒸鯖魚, 現撈清蒸魚, 鯖魚產地, 杉木蒸籠, 南方澳鯖魚, 挪威鯖魚, 重視品質美食, 健康低脂高蛋白">
+  <title>清蒸魚｜現撈清蒸鯖魚專賣・純粹鮮美，極致旬味</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;700;900&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
   <style>
+    /* ==========================================================================
+       CSS Variables & Theme Settings (米白色系 Brand Identity)
+       ========================================================================== */
     :root {
-      --forest: #17382b;
-      --deep-forest: #0e291f;
-      --moss: #426a4a;
-      --leaf: #9aaa72;
-      --cream: #f4f1e8;
-      --paper: #fbfaf5;
-      --oat: #ddca9e;
-      --clay: #ad7655;
-      --ink: #26342b;
-      --muted: #69776e;
-      --line: #d9ddd1;
-      --shadow: 0 20px 50px rgba(18, 45, 32, .13);
+      /* 米白核心色彩 (Rice-White / Cream Palette) */
+      --color-cream-100: #FDFBF7;      /* 最淺純淨米白背景 */
+      --color-cream-200: #F9F6F0;      /* 柔和米白卡片背景 */
+      --color-cream-300: #F2ECE1;      /* 溫潤米白邊框與分隔 */
+      --color-cream-400: #E6DDCF;      /* 深米色線條 */
+      --color-cream-500: #D8CCBC;      /* 雅緻米灰 */
+      
+      /* 杉木與竹蒸籠輔色 (Warm Cedar / Bamboo Accents) */
+      --color-cedar: #A47E53;          /* 杉木焦糖暖棕 */
+      --color-cedar-light: #C9A880;    /* 淺木質色 */
+      --color-cedar-dark: #6D4E2D;     /* 深沉熟成木色 */
+      
+      /* 深海青與清冽霧青 (Pure Ocean Mist & Porcelain Slate) */
+      --color-ocean-dark: #1E2D2F;     /* 墨青底色，穩重高雅 */
+      --color-ocean-slate: #2C4043;    /* 蒸籠沉靜主色 */
+      --color-ocean-mist: #58797D;     /* 溫和海霧青 */
+      --color-ocean-light: #E7EEED;    /* 冰透青白光芒 */
+      
+      /* 蒸氣白與文字色 (Vapor White & Contrast Text) */
+      --text-primary: #1C2426;         /* 主要內文字（深炭墨） */
+      --text-secondary: #536265;       /* 次要內文字 */
+      --text-light-cream: #FAF7F2;     /* 深底時的米白文字 */
+      --text-muted: #829193;           /* 輔助標籤文字 */
+      
+      /* 金光點綴 (Artisanal Gold Highlight) */
+      --color-gold: #C29B4D;           /* 典雅提香金 */
+      --color-gold-soft: #F4EAD3;      /* 淡金色徽章 */
+      
+      /* 陰影與圓角 */
+      --shadow-sm: 0 2px 10px rgba(44, 64, 67, 0.04);
+      --shadow-md: 0 12px 32px rgba(44, 64, 67, 0.07);
+      --shadow-lg: 0 24px 48px rgba(30, 45, 47, 0.12);
+      --shadow-inner: inset 0 2px 6px rgba(0, 0, 0, 0.03);
+      
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --container-max: 1220px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Noto Sans TC", sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .container { width: min(1140px, calc(100% - 52px)); margin: 0 auto; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; color: var(--moss); font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .12em; }
-    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
-    .title { margin: 0; font: 700 clamp(30px, 4vw, 48px)/1.3 "Noto Serif TC", serif; letter-spacing: .06em; }
-    .title strong { color: var(--moss); font: inherit; }
-    .copy { max-width: 48ch; margin: 18px 0 0; color: var(--muted); font-size: 15px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 12px 22px; border: 1px solid transparent; border-radius: 1px; font-size: 14px; font-weight: 700; letter-spacing: .04em; transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease; }
-    .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #d3c66b; outline-offset: 3px; }
-    .button-main { color: var(--deep-forest); background: var(--oat); box-shadow: 0 10px 24px rgba(7, 27, 18, .18); }
-    .button-main:hover { background: #eddaac; }
-    .button-light { border-color: rgba(255,255,255,.58); color: #fff; }
-    .button-light:hover { background: rgba(255,255,255,.12); }
-    .icon-arrow { font-size: 19px; line-height: 1; }
-
-    /* Header */
-    .header { position: absolute; z-index: 10; width: 100%; color: #fff; border-bottom: 1px solid rgba(255,255,255,.17); }
-    .nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; }
-    .brand { display: flex; align-items: center; gap: 11px; font: 700 20px/1 "Noto Serif TC", serif; letter-spacing: .11em; }
-    .brand-symbol { position: relative; width: 29px; height: 31px; border: 1px solid #bbcd91; border-radius: 50% 50% 47% 47%; color: #d9e5b6; }
-    .brand-symbol::before { content: ""; position: absolute; top: 5px; left: 13px; width: 1px; height: 20px; background: #d9e5b6; transform: rotate(32deg); transform-origin: bottom; }
-    .brand small { display: block; margin-top: 5px; color: rgba(255,255,255,.63); font: 500 8px/1 "DM Mono", monospace; letter-spacing: .14em; }
-    .nav-links { display: flex; align-items: center; gap: 27px; font-size: 13px; font-weight: 500; }
-    .nav-links a { position: relative; padding: 6px 0; }
-    .nav-links a:not(.nav-book)::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--leaf); transform: scaleX(0); transform-origin: right; transition: transform .2s; }
-    .nav-links a:not(.nav-book):hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-book { padding: 8px 15px !important; border: 1px solid rgba(255,255,255,.58); }
-    .nav-book:hover { color: var(--forest); background: #fff; }
-    .menu-button { display: none; width: 40px; height: 40px; border: 0; color: #fff; background: transparent; font-size: 23px; }
-
-    /* Hero */
-    .hero { position: relative; min-height: 720px; overflow: hidden; color: #fff; background: var(--forest); }
-    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 35%, rgba(141,170,103,.28), transparent 22%), linear-gradient(110deg, #133326 0%, #17382b 47%, #2f5a3c 100%); }
-    .hero::after { content: ""; position: absolute; top: -290px; right: -215px; width: 650px; height: 650px; border: 1px solid rgba(223,235,186,.22); border-radius: 50%; box-shadow: 0 0 0 74px rgba(223,235,186,.045), 0 0 0 189px rgba(223,235,186,.025); }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 35px; align-items: center; min-height: 720px; padding: 126px 0 72px; }
-    .hero .eyebrow { color: #c3d99a; }
-    .hero h1 { max-width: 12ch; margin: 0; font: 900 clamp(43px, 5.5vw, 70px)/1.22 "Noto Serif TC", serif; letter-spacing: .08em; }
-    .hero h1 em { color: #d2dfa9; font-style: normal; }
-    .hero-lede { max-width: 43ch; margin: 26px 0 31px; color: rgba(255,255,255,.78); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-    .hero-signature { margin: 29px 0 0; color: rgba(255,255,255,.5); font: 500 10px/1.6 "DM Mono", monospace; letter-spacing: .13em; }
-    .hero-visual { position: relative; height: 453px; }
-    .sun-disc { position: absolute; top: 25px; right: 9%; width: 164px; height: 164px; border-radius: 50%; background: #dce7b5; box-shadow: 0 0 72px rgba(220,231,181,.25); }
-    .hill { position: absolute; right: -10%; bottom: -2px; width: 107%; height: 75%; clip-path: polygon(0 76%, 20% 41%, 38% 61%, 62% 20%, 75% 38%, 90% 3%, 100% 25%, 100% 100%, 0 100%); background: linear-gradient(136deg, #72905c, #244c36 69%); opacity: .88; }
-    .hill::after { content: ""; position: absolute; inset: 0; background: linear-gradient(150deg, transparent 39%, rgba(8,38,25,.55) 39.5% 100%); }
-    .coffee-plant { position: absolute; z-index: 2; right: 19%; bottom: 13px; width: 255px; height: 330px; transform: rotate(-4deg); }
-    .stem { position: absolute; bottom: 0; left: 125px; width: 4px; height: 283px; border-radius: 4px; background: #d6c488; transform: rotate(12deg); transform-origin: bottom; }
-    .leaf { position: absolute; width: 82px; height: 42px; border: 3px solid #d5dfa9; border-radius: 100% 0 100% 0; background: rgba(173,202,117,.26); }
-    .leaf::after { content: ""; position: absolute; top: 50%; left: 4px; width: 68px; height: 1px; background: rgba(226,237,189,.78); transform: rotate(-28deg); transform-origin: left; }
-    .leaf-a { top: 49px; left: 35px; transform: rotate(-40deg); }
-    .leaf-b { top: 95px; right: 22px; transform: rotate(20deg) scaleX(-1); }
-    .leaf-c { top: 159px; left: 23px; transform: rotate(-43deg) scale(.84); }
-    .leaf-d { top: 204px; right: 7px; transform: rotate(24deg) scaleX(-1) scale(.74); }
-    .leaf-e { top: 5px; right: 60px; transform: rotate(0deg) scale(.72); }
-    .bean { position: absolute; z-index: 3; width: 33px; height: 43px; border-radius: 50%; background: linear-gradient(110deg, #b87957, #6d3e28); box-shadow: 0 8px 12px rgba(0,0,0,.17); }
-    .bean::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 15px; width: 2px; border-radius: 50%; background: rgba(45,26,19,.72); transform: rotate(8deg); }
-    .bean-1 { top: 91px; left: 89px; transform: rotate(26deg); }
-    .bean-2 { top: 158px; right: 77px; transform: rotate(-17deg) scale(.83); }
-    .bean-3 { top: 231px; left: 56px; transform: rotate(19deg) scale(.68); }
-    .origin-tag { position: absolute; z-index: 3; top: 52%; right: -2%; width: 132px; padding-left: 12px; border-left: 1px solid #c3d99a; color: rgba(255,255,255,.76); font-size: 10px; line-height: 1.7; letter-spacing: .08em; }
-    .origin-tag b { display: block; color: #dce7b5; font: 500 16px/1.2 "DM Mono", monospace; }
-    .scroll-hint { position: absolute; bottom: 22px; left: max(26px, calc((100% - 1140px) / 2)); z-index: 2; display: flex; gap: 11px; align-items: center; color: rgba(255,255,255,.52); font: 500 10px/1 "DM Mono", monospace; letter-spacing: .13em; }
-    .scroll-hint::before { content: ""; width: 36px; height: 1px; background: currentColor; }
-
-    /* Story */
-    .story { padding: 118px 0; background: var(--paper); }
-    .story-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(46px, 9vw, 120px); align-items: center; }
-    .origin-window { position: relative; min-height: 395px; overflow: hidden; background: #e0e5d4; }
-    .origin-window::before { content: ""; position: absolute; inset: 27px; border: 1px solid rgba(23,56,43,.25); }
-    .origin-sun { position: absolute; top: 64px; right: 63px; width: 86px; height: 86px; border-radius: 50%; background: #d8c485; }
-    .origin-hill-one, .origin-hill-two { position: absolute; right: -12%; bottom: -2%; left: -13%; clip-path: polygon(0 72%, 23% 40%, 42% 62%, 66% 13%, 82% 49%, 100% 24%, 100% 100%, 0 100%); }
-    .origin-hill-one { height: 78%; background: #799267; }
-    .origin-hill-two { height: 58%; background: #315b42; transform: scaleX(-1); }
-    .origin-label { position: absolute; z-index: 2; right: 28px; bottom: 27px; color: #fff; font: 500 10px/1.7 "DM Mono", monospace; letter-spacing: .1em; text-align: right; }
-    .origin-label b { display: block; color: #dce7b5; font-size: 15px; }
-    .story-note { position: absolute; z-index: 3; bottom: 0; left: 0; width: 217px; padding: 20px 22px; color: #f9f8f1; background: var(--forest); box-shadow: var(--shadow); }
-    .story-note b { display: block; margin-bottom: 8px; color: #cfddaa; font: 500 10px/1 "DM Mono", monospace; letter-spacing: .12em; }
-    .story-note p { margin: 0; font-size: 12px; line-height: 1.8; }
-    .story-link { display: inline-flex; gap: 10px; margin-top: 29px; padding-bottom: 4px; border-bottom: 1px solid var(--moss); color: var(--moss); font-size: 14px; font-weight: 700; }
-
-    /* Selection */
-    .selection { padding: 112px 0 120px; background: var(--cream); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
-    .section-head .copy { max-width: 34ch; margin: 0; font-size: 14px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .coffee-card { display: flex; flex-direction: column; min-height: 455px; background: var(--paper); box-shadow: 0 1px 0 var(--line); transition: transform .25s ease, box-shadow .25s ease; }
-    .coffee-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
-    .bag-visual { position: relative; height: 214px; overflow: hidden; background: #dfe6d7; }
-    .coffee-card:nth-child(2) .bag-visual { background: #d7dfca; }
-    .coffee-card:nth-child(3) .bag-visual { background: #e7ddc9; }
-    .bag { position: absolute; right: 50%; bottom: -10px; width: 156px; height: 199px; padding: 28px 16px; color: #fff; background: var(--forest); box-shadow: 10px 14px 25px rgba(20,50,36,.17); transform: translateX(50%); }
-    .coffee-card:nth-child(2) .bag { background: #315a3d; }
-    .coffee-card:nth-child(3) .bag { background: #806248; }
-    .bag::before { content: ""; position: absolute; top: 13px; right: 12px; left: 12px; height: 1px; background: rgba(255,255,255,.35); box-shadow: 0 5px 0 rgba(255,255,255,.18); }
-    .bag .mini-leaf { display: block; width: 24px; height: 14px; margin-bottom: 19px; border: 1px solid #dce7b5; border-radius: 100% 0; transform: rotate(-28deg); }
-    .bag .bag-name { position: relative; z-index: 1; font: 700 18px/1.3 "Noto Serif TC", serif; letter-spacing: .07em; }
-    .bag .bag-origin { display: block; margin-top: 7px; color: rgba(255,255,255,.65); font: 400 7px/1.4 "DM Mono", monospace; letter-spacing: .1em; }
-    .card-body { display: flex; flex: 1; flex-direction: column; padding: 23px 24px 22px; }
-    .card-index { color: var(--moss); font: 500 10px/1 "DM Mono", monospace; letter-spacing: .09em; }
-    .card-body h3 { margin: 13px 0 5px; font: 700 23px/1.4 "Noto Serif TC", serif; letter-spacing: .06em; }
-    .card-origin { margin: 0; color: var(--muted); font-size: 12px; }
-    .flavour { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 auto; }
-    .flavour span { padding: 3px 8px; border: 1px solid var(--line); color: var(--moss); font-size: 11px; }
-    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--line); }
-    .price { font: 500 13px/1 "DM Mono", monospace; }
-    .save-button { padding: 4px 0; border: 0; color: var(--moss); background: transparent; font-size: 12px; font-weight: 700; }
-    .save-button:hover { color: var(--clay); }
-
-    /* Brew */
-    .brew { position: relative; overflow: hidden; padding: 118px 0; color: #f8f8ef; background: var(--forest); }
-    .brew::before { content: ""; position: absolute; top: -160px; left: -120px; width: 460px; height: 460px; border: 1px solid rgba(211,227,166,.14); border-radius: 50%; box-shadow: 0 0 0 75px rgba(211,227,166,.035); }
-    .brew-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(45px, 8vw, 100px); align-items: center; }
-    .brew .eyebrow { color: #c6d99c; }
-    .brew .title strong { color: #dce7b5; }
-    .brew .copy { color: rgba(255,255,255,.69); }
-    .brew-drawing { position: relative; min-height: 409px; border: 1px solid rgba(220,231,181,.38); background: rgba(255,255,255,.035); }
-    .brew-drawing::before { content: ""; position: absolute; top: 28px; left: 27px; width: 51px; height: 1px; background: #c6d99c; box-shadow: 0 9px 0 #c6d99c, 0 18px 0 #c6d99c; }
-    .water-lines { position: absolute; top: 63px; left: 50%; width: 186px; height: 155px; border: 2px solid rgba(210,228,174,.75); border-bottom: 0; border-radius: 50% 50% 0 0; transform: translateX(-50%); }
-    .water-lines::before, .water-lines::after { content: ""; position: absolute; top: 13px; right: 18px; bottom: 0; left: 18px; border: 1px solid rgba(210,228,174,.48); border-bottom: 0; border-radius: 50% 50% 0 0; }
-    .water-lines::after { top: 26px; right: 36px; left: 36px; }
-    .dripper { position: absolute; bottom: 81px; left: 50%; width: 184px; height: 136px; border: 3px solid #e6edd0; background: linear-gradient(115deg, rgba(173,203,129,.34), rgba(30,74,48,.14)); clip-path: polygon(0 0,100% 0,72% 100%,28% 100%); transform: translateX(-50%); }
-    .dripper::before { content: ""; position: absolute; top: 14px; right: 19px; bottom: 0; left: 19px; border-left: 1px solid rgba(230,237,208,.5); border-right: 1px solid rgba(230,237,208,.5); transform: skewX(-12deg); }
-    .server { position: absolute; bottom: 28px; left: 50%; width: 122px; height: 65px; border: 3px solid #e6edd0; border-radius: 6px 6px 34px 34px; background: linear-gradient(90deg, rgba(160,192,130,.34), rgba(9,41,27,.24)); transform: translateX(-50%); }
-    .server::after { content: ""; position: absolute; right: 12px; bottom: 9px; left: 12px; height: 25px; border-radius: 2px 2px 18px 18px; background: rgba(100,59,35,.8); }
-    .brew-caption { position: absolute; right: 24px; bottom: 21px; color: #c6d99c; font: 400 9px/1.8 "DM Mono", monospace; letter-spacing: .08em; text-align: right; }
-    .method-list { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .method-list li { display: grid; grid-template-columns: 45px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid rgba(220,231,181,.25); }
-    .method-list li:last-child { border-bottom: 1px solid rgba(220,231,181,.25); }
-    .method-no { color: #c6d99c; font: 500 14px/1.7 "DM Mono", monospace; }
-    .method-text b { display: block; font-size: 15px; }
-    .method-text span { color: rgba(255,255,255,.64); font-size: 13px; }
-
-    /* Visit */
-    .visit { padding: 112px 0; background: var(--paper); }
-    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(42px, 8vw, 105px); align-items: center; }
-    .store-card { position: relative; min-height: 350px; overflow: hidden; color: #fff; background: var(--moss); box-shadow: var(--shadow); }
-    .store-card::before { content: ""; position: absolute; inset: 0; opacity: .68; background: linear-gradient(138deg, transparent 28%, rgba(11,45,30,.46) 28.5% 100%), repeating-linear-gradient(122deg, transparent 0 61px, rgba(224,235,195,.18) 62px 63px, transparent 64px 100px); }
-    .store-card::after { content: ""; position: absolute; top: -68px; right: -61px; width: 265px; height: 265px; border: 1px solid rgba(227,237,203,.44); border-radius: 50%; }
-    .store-inner { position: relative; z-index: 1; display: flex; min-height: 350px; flex-direction: column; padding: 32px; }
-    .store-kicker { margin: 0; color: #dce7b5; font: 400 10px/1 "DM Mono", monospace; letter-spacing: .13em; }
-    .store-inner h3 { margin: auto 0 7px; font: 700 31px/1.35 "Noto Serif TC", serif; letter-spacing: .08em; }
-    .store-inner p:not(.store-kicker) { max-width: 23ch; margin: 0; color: rgba(255,255,255,.76); font-size: 13px; }
-    .store-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: #fff; font-size: 13px; font-weight: 700; }
-    .details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin: 30px 0 0; }
-    .detail { padding: 16px 0; border-top: 1px solid var(--line); }
-    .detail:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
-    .detail:nth-child(odd) { padding-right: 19px; }
-    .detail:nth-child(even) { padding-left: 19px; border-left: 1px solid var(--line); }
-    .detail b { display: block; margin-bottom: 6px; color: var(--moss); font: 500 10px/1 "DM Mono", monospace; letter-spacing: .09em; }
-    .detail span { font-size: 13px; }
-
-    /* Footer and small UI */
-    footer { color: rgba(255,255,255,.68); background: var(--deep-forest); }
-    .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 42px; padding: 57px 0 37px; }
-    .footer-brand { color: #fff; }
-    .footer-brand p { max-width: 30ch; margin: 16px 0 0; font-size: 13px; }
-    .footer-heading { margin: 0 0 14px; color: #c6d99c; font: 500 10px/1 "DM Mono", monospace; letter-spacing: .13em; }
-    .footer-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
-    .footer-list li + li { margin-top: 8px; }
-    .footer-list a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.13); color: rgba(255,255,255,.42); font: 400 10px/1.5 "DM Mono", monospace; letter-spacing: .06em; }
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 30; max-width: min(340px, calc(100% - 44px)); padding: 13px 17px; border-left: 3px solid var(--oat); color: #fff; background: var(--deep-forest); box-shadow: var(--shadow); font-size: 13px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .23s ease, transform .23s ease; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 840px) {
-      .nav { min-height: 68px; }
-      .menu-button { display: block; }
-      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: grid; gap: 0; max-height: 0; overflow: hidden; background: #112f23; transition: max-height .28s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.14); }
-      .nav-links a { padding: 13px 26px; border-bottom: 1px solid rgba(255,255,255,.1); }
-      .nav-links .nav-book { margin: 10px 26px; text-align: center; }
-      .hero, .hero-grid { min-height: 725px; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 110px; }
-      .hero-visual { height: 280px; margin-top: -40px; }
-      .sun-disc { top: 8px; right: 14%; width: 118px; height: 118px; }
-      .hill { width: 86%; height: 97%; }
-      .coffee-plant { right: 16%; bottom: -24px; transform: scale(.75) rotate(-4deg); transform-origin: bottom right; }
-      .origin-tag { top: 45%; right: 1%; }
-      .story-grid, .brew-grid, .visit-grid { grid-template-columns: 1fr; }
-      .origin-window { max-width: 560px; width: 100%; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:last-child { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1.4fr 1fr; }
-      .footer-brand { grid-column: span 2; }
+    /* ==========================================================================
+       Reset & Base Typography
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    @media (max-width: 570px) {
-      .container { width: min(100% - 34px, 1140px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 99px; padding-bottom: 44px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { margin: 19px 0 23px; font-size: 14px; }
-      .hero-visual { height: 238px; }
-      .origin-tag { display: none; }
-      .scroll-hint { bottom: 12px; left: 17px; }
-      .story, .selection, .brew, .visit { padding: 76px 0; }
-      .origin-window { min-height: 335px; }
-      .story-note { width: 190px; padding: 16px; }
-      .section-head { display: block; }
-      .section-head .copy { margin-top: 15px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card:last-child { grid-column: auto; }
-      .brew-drawing { min-height: 325px; }
-      .water-lines { transform: translateX(-50%) scale(.82); transform-origin: top; }
-      .dripper { transform: translateX(-50%) scale(.8); transform-origin: bottom; }
-      .server { transform: translateX(-50%) scale(.8); transform-origin: bottom; }
-      .details { grid-template-columns: 1fr; }
-      .detail, .detail:nth-last-child(-n+2) { border-bottom: 0; }
-      .detail:first-child { border-top: 1px solid var(--line); }
-      .detail:last-child { border-bottom: 1px solid var(--line); }
-      .detail:nth-child(even) { padding-left: 0; border-left: 0; }
-      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+    body {
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--color-cream-100);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-image: 
+        radial-gradient(circle at 100% 0%, rgba(201, 168, 128, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, rgba(88, 121, 125, 0.05) 0%, transparent 40%);
+    }
+
+    .serif {
+      font-family: "Noto Serif TC", serif;
+    }
+
+    .latin {
+      font-family: "Cinzel", serif;
+      letter-spacing: 0.1em;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container-max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--color-cedar);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--color-cedar-light);
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(2.1rem, 3.8vw, 3rem);
+      font-weight: 900;
+      line-height: 1.3;
+      color: var(--color-ocean-dark);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--color-ocean-mist);
+      position: relative;
+    }
+
+    .section-title em::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 6px;
+      background: rgba(194, 155, 77, 0.22);
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      font-weight: 400;
+    }
+
+    /* Common Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0.95rem 2.2rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-ocean-dark) 0%, var(--color-ocean-slate) 100%);
+      color: var(--color-cream-100);
+      box-shadow: 0 8px 24px rgba(30, 45, 47, 0.22);
+      border: 1px solid rgba(194, 155, 77, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #121c1d 0%, #1e2d2f 100%);
+      color: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(30, 45, 47, 0.3);
+    }
+
+    .btn-outline-cedar {
+      background: transparent;
+      color: var(--color-cedar-dark);
+      border: 1.5px solid var(--color-cedar);
+    }
+
+    .btn-outline-cedar:hover {
+      background: var(--color-cream-200);
+      color: var(--color-ocean-dark);
+      transform: translateY(-2px);
+      border-color: var(--color-cedar-dark);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--color-gold-soft);
+      color: var(--color-cedar-dark);
+      border: 1px solid rgba(194, 155, 77, 0.3);
+    }
+
+    /* ==========================================================================
+       Header & Navigation
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-cream-300);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-cream-200), var(--color-cream-300));
+      border: 1.5px solid var(--color-cedar-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-ocean-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-text h1 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: var(--color-ocean-dark);
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--color-cedar);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 8px 0;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--color-cedar);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    .nav-menu a:hover {
+      color: var(--color-ocean-dark);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mobile-menu-trigger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      color: var(--color-ocean-dark);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* ==========================================================================
+       Hero Section
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 60px 0 100px;
+      overflow: hidden;
+      background: 
+        radial-gradient(circle at 85% 25%, rgba(194, 155, 77, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(88, 121, 125, 0.08) 0%, transparent 50%),
+        var(--color-cream-100);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-ocean-slate);
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-tagline .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-cedar);
+      box-shadow: 0 0 0 4px rgba(164, 126, 83, 0.2);
+      animation: pulseGlow 2.5s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
+    }
+
+    .hero-title {
+      font-family: "Noto Serif TC", serif;
+      font-size: clamp(2.6rem, 4.8vw, 4rem);
+      font-weight: 900;
+      line-height: 1.22;
+      color: var(--color-ocean-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title .highlight-cedar {
+      color: var(--color-cedar);
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero-title .highlight-cedar::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      width: 100%;
+      height: 14px;
+      background: rgba(201, 168, 128, 0.25);
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero-description {
+      font-size: 1.12rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 2.2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-features-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-cream-300);
+    }
+
+    .feature-point h4 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--color-ocean-dark);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .feature-point p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Hero Visual Showcase */
+    .hero-visual-card {
+      position: relative;
+      background: var(--color-cream-200);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-cream-300);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .steamer-illustration-box {
+      width: 100%;
+      height: 380px;
+      background: radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.9) 0%, rgba(242, 236, 225, 0.6) 100%);
+      border-radius: var(--radius-md);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-cream-400);
+      overflow: hidden;
+    }
+
+    /* Steam Vapor Animation */
+    .steam-vapor-container {
+      position: absolute;
+      top: 18px;
+      display: flex;
+      gap: 24px;
+      z-index: 2;
+    }
+
+    .vapor-wave {
+      width: 18px;
+      height: 70px;
+      background: linear-gradient(to top, rgba(88, 121, 125, 0.25), transparent);
+      border-radius: 50% 50% 0 0;
+      filter: blur(6px);
+      animation: riseAndFade 3.5s infinite ease-in-out;
+    }
+
+    .vapor-wave:nth-child(2) {
+      animation-delay: 1.2s;
+      height: 90px;
+    }
+
+    .vapor-wave:nth-child(3) {
+      animation-delay: 2.1s;
+      height: 65px;
+    }
+
+    @keyframes riseAndFade {
+      0% { transform: translateY(20px) scaleX(0.7); opacity: 0; }
+      50% { opacity: 0.8; transform: translateY(-15px) scaleX(1.2); }
+      100% { transform: translateY(-45px) scaleX(1.6); opacity: 0; }
+    }
+
+    .dish-plate-svg {
+      width: 290px;
+      height: 230px;
+      filter: drop-shadow(0 15px 25px rgba(44, 64, 67, 0.15));
+      transition: transform 0.6s ease;
+    }
+
+    .steamer-illustration-box:hover .dish-plate-svg {
+      transform: scale(1.04);
+    }
+
+    .hero-quality-seal {
+      position: absolute;
+      bottom: -16px;
+      right: 20px;
+      background: var(--color-cream-100);
+      border: 1px solid var(--color-cedar-light);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .seal-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--color-cedar-dark);
+      border: 1px dashed var(--color-gold);
+    }
+
+    .seal-info strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--color-ocean-dark);
+      font-weight: 800;
+    }
+
+    .seal-info span {
+      font-size: 0.78rem;
+      color: var(--color-cedar);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       Promotion & Customer Incentive Banner (吸引消費)
+       ========================================================================== */
+    .incentive-banner {
+      background: linear-gradient(135deg, var(--color-ocean-dark) 0%, var(--color-ocean-slate) 100%);
+      color: var(--color-cream-100);
+      padding: 24px 0;
+      border-top: 1px solid rgba(194, 155, 77, 0.3);
+      border-bottom: 1px solid rgba(194, 155, 77, 0.3);
+    }
+
+    .incentive-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .incentive-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .incentive-tag {
+      background: var(--color-gold);
+      color: var(--color-ocean-dark);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.08em;
+    }
+
+    .incentive-text h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+    }
+
+    .incentive-text p {
+      font-size: 0.9rem;
+      color: var(--color-cream-400);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #DFBE77 0%, var(--color-gold) 100%);
+      color: var(--color-ocean-dark);
+      font-weight: 800;
+      padding: 0.75rem 1.6rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 16px rgba(194, 155, 77, 0.35);
+      border: 1px solid #FFF;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(194, 155, 77, 0.45);
+    }
+
+    /* ==========================================================================
+       Origin Section (強調鯖魚產地)
+       ========================================================================== */
+    .origin-section {
+      padding: 110px 0;
+      background: var(--color-cream-100);
+      position: relative;
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 60px;
+    }
+
+    .origin-card {
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-lg);
+      padding: 42px 36px;
+      position: relative;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .origin-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-cedar-light);
+    }
+
+    .origin-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--color-cream-300);
+      padding-bottom: 18px;
+    }
+
+    .origin-title-box h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--color-ocean-dark);
+    }
+
+    .origin-title-box span {
+      font-size: 0.85rem;
+      color: var(--color-cedar);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .origin-icon-stamp {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-cream-100);
+      border: 1.5px solid var(--color-cream-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: var(--color-ocean-mist);
+    }
+
+    .origin-specs-list {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .origin-specs-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .origin-specs-list li strong {
+      color: var(--color-ocean-dark);
+      min-width: 80px;
+    }
+
+    .origin-specs-list li::before {
+      content: "•";
+      color: var(--color-cedar);
+      font-size: 1.4rem;
+      line-height: 0;
+    }
+
+    .origin-taste-tag {
+      background: var(--color-cream-100);
+      border: 1px dashed var(--color-cedar-light);
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      color: var(--color-ocean-slate);
+      line-height: 1.6;
+    }
+
+    /* Traceability Promise Bar */
+    .traceability-bar {
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-md);
+      padding: 30px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .trace-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .trace-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--color-ocean-dark);
+      color: var(--color-cream-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .trace-item h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-ocean-dark);
+    }
+
+    .trace-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       Steaming Craft Section (強調清蒸方式)
+       ========================================================================== */
+    .steaming-section {
+      padding: 110px 0;
+      background: radial-gradient(circle at 50% 0%, rgba(201, 168, 128, 0.08) 0%, transparent 70%), var(--color-cream-200);
+      border-top: 1px solid var(--color-cream-300);
+      border-bottom: 1px solid var(--color-cream-300);
+      position: relative;
+    }
+
+    .craft-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .craft-step-card {
+      background: var(--color-cream-100);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-md);
+      padding: 36px 26px;
+      position: relative;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .craft-step-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-cedar);
+    }
+
+    .step-number {
+      font-family: "Cinzel", serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-cedar-light);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .step-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .craft-step-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-ocean-dark);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .craft-step-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      flex-grow: 1;
+    }
+
+    .step-secret-badge {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--color-cream-300);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-cedar);
+    }
+
+    /* Comparison Box: 為什麼品質客群堅持清蒸而非油炸炭烤 */
+    .why-steam-box {
+      background: var(--color-cream-100);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .why-steam-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .why-steam-text h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--color-ocean-dark);
+      margin-bottom: 16px;
+    }
+
+    .why-steam-text p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .nutrition-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .nutrition-compare-table th,
+    .nutrition-compare-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-cream-300);
+    }
+
+    .nutrition-compare-table th {
+      background: var(--color-cream-200);
+      color: var(--color-ocean-dark);
+      font-weight: 700;
+    }
+
+    .nutrition-compare-table tr.highlight-row {
+      background: rgba(194, 155, 77, 0.08);
+      font-weight: 700;
+      color: var(--color-cedar-dark);
+    }
+
+    /* ==========================================================================
+       Menu Section (吸引客戶消費清蒸魚菜單)
+       ========================================================================== */
+    .menu-section {
+      padding: 110px 0;
+      background: var(--color-cream-100);
+    }
+
+    .menu-filter-nav {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 46px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      border: 1.5px solid var(--color-cream-300);
+      background: var(--color-cream-100);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--color-ocean-dark);
+      color: var(--color-cream-100);
+      border-color: var(--color-ocean-dark);
+      box-shadow: 0 4px 14px rgba(30, 45, 47, 0.2);
+    }
+
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 32px;
+    }
+
+    .dish-card {
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-cedar-light);
+    }
+
+    .dish-visual-wrapper {
+      position: relative;
+      height: 220px;
+      background: radial-gradient(circle at 50% 50%, #FAF8F4 0%, #EAE3D5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--color-cream-300);
+      overflow: hidden;
+    }
+
+    .dish-origin-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(30, 45, 47, 0.88);
+      color: var(--color-cream-100);
+      backdrop-filter: blur(6px);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .dish-craft-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--color-gold-soft);
+      color: var(--color-cedar-dark);
+      border: 1px solid var(--color-gold);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .dish-svg-icon {
+      width: 190px;
+      height: 140px;
+      filter: drop-shadow(0 10px 18px rgba(44, 64, 67, 0.12));
+      transition: transform 0.5s ease;
+    }
+
+    .dish-card:hover .dish-svg-icon {
+      transform: scale(1.08) rotate(-1deg);
+    }
+
+    .dish-content {
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dish-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .dish-title-row h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-ocean-dark);
+    }
+
+    .dish-price {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--color-cedar-dark);
+    }
+
+    .dish-price span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    .dish-description {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .dish-flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag-sm {
+      font-size: 0.75rem;
+      background: var(--color-cream-100);
+      color: var(--color-ocean-slate);
+      border: 1px solid var(--color-cream-300);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+    }
+
+    .dish-bottom-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px dashed var(--color-cream-300);
+    }
+
+    .dish-nutrition-hint {
+      font-size: 0.8rem;
+      color: var(--color-cedar);
+      font-weight: 600;
+    }
+
+    .btn-select-dish {
+      background: var(--color-ocean-dark);
+      color: var(--color-cream-100);
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-select-dish:hover {
+      background: var(--color-cedar);
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       Tasting Guide Section (清蒸魚黃金三吃與熟度品味)
+       ========================================================================== */
+    .tasting-guide-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--color-ocean-dark) 0%, #152224 100%);
+      color: var(--color-cream-100);
+      position: relative;
+    }
+
+    .tasting-guide-section .section-title {
+      color: var(--color-cream-100);
+    }
+
+    .tasting-guide-section .section-desc {
+      color: var(--color-cream-400);
+    }
+
+    .guide-triad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 50px;
+    }
+
+    .guide-triad-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(201, 168, 128, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 38px 28px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .guide-triad-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--color-gold);
+      transform: translateY(-6px);
+    }
+
+    .triad-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      color: var(--color-ocean-dark);
+      font-weight: 900;
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+    }
+
+    .guide-triad-card h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-gold-soft);
+      margin-bottom: 14px;
+    }
+
+    .guide-triad-card p {
+      font-size: 0.95rem;
+      color: #D3DFDE;
+      line-height: 1.8;
+    }
+
+    /* ==========================================================================
+       Customer Reviews (重視品質的消費者 真實好評)
+       ========================================================================== */
+    .reviews-section {
+      padding: 110px 0;
+      background: var(--color-cream-100);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .review-card {
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      position: relative;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-card:hover {
+      border-color: var(--color-cedar);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .stars-line {
+      color: var(--color-gold);
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-quote {
+      font-size: 1rem;
+      color: var(--color-ocean-slate);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .reviewer-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-top: 1px solid var(--color-cream-300);
+      padding-top: 18px;
+    }
+
+    .reviewer-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-cream-100);
+      border: 1.5px solid var(--color-cedar-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .reviewer-meta h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-ocean-dark);
+    }
+
+    .reviewer-meta span {
+      font-size: 0.82rem;
+      color: var(--color-cedar);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       Booking & Ordering Section (吸引消費行動核心區)
+       ========================================================================== */
+    .booking-section {
+      padding: 110px 0;
+      background: 
+        radial-gradient(circle at 0% 0%, rgba(201, 168, 128, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(88, 121, 125, 0.1) 0%, transparent 60%),
+        var(--color-cream-200);
+    }
+
+    .booking-card-wrapper {
+      background: var(--color-cream-100);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-cream-300);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+    }
+
+    .booking-intro-panel {
+      background: linear-gradient(145deg, var(--color-ocean-dark) 0%, #152224 100%);
+      color: var(--color-cream-100);
+      padding: 56px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .booking-intro-panel h3 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #FFFFFF;
+    }
+
+    .booking-intro-panel p {
+      font-size: 1rem;
+      color: var(--color-cream-400);
+      line-height: 1.85;
+      margin-bottom: 30px;
+    }
+
+    .booking-guarantees {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .booking-guarantees li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #D3DFDE;
+      margin-bottom: 14px;
+    }
+
+    .booking-guarantees li span {
+      color: var(--color-gold);
+      font-size: 1.2rem;
+    }
+
+    .service-hotline-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 168, 128, 0.3);
+      padding: 20px;
+      border-radius: var(--radius-md);
+    }
+
+    .service-hotline-box small {
+      font-size: 0.8rem;
+      color: var(--color-gold-soft);
+      letter-spacing: 0.1em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .service-hotline-box strong {
+      font-family: "Cinzel", serif;
+      font-size: 1.45rem;
+      color: #FFFFFF;
+      letter-spacing: 0.05em;
+    }
+
+    .booking-form-panel {
+      padding: 56px 48px;
+    }
+
+    .booking-form-panel h4 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--color-ocean-dark);
+      margin-bottom: 8px;
+    }
+
+    .booking-form-panel .sub-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-ocean-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-control {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-cream-300);
+      background: var(--color-cream-100);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-cedar);
+      box-shadow: 0 0 0 3px rgba(164, 126, 83, 0.15);
+      background: #FFFFFF;
+    }
+
+    .form-control::placeholder {
+      color: #A3AFB1;
+    }
+
+    .booking-submit-row {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .privacy-notice {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Success Alert */
+    .booking-alert-box {
+      display: none;
+      background: #EDF7ED;
+      border: 1.5px solid #4CAF50;
+      color: #1E4620;
+      padding: 18px 24px;
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       Store Information (門市與品嚐據點)
+       ========================================================================== */
+    .store-section {
+      padding: 90px 0;
+      background: var(--color-cream-100);
+      border-top: 1px solid var(--color-cream-300);
+    }
+
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .store-card {
+      background: var(--color-cream-200);
+      border: 1px solid var(--color-cream-300);
+      border-radius: var(--radius-md);
+      padding: 32px 26px;
+      transition: var(--transition);
+    }
+
+    .store-card:hover {
+      border-color: var(--color-cedar);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .store-card h4 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-ocean-dark);
+      margin-bottom: 14px;
+    }
+
+    .store-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       Site Footer
+       ========================================================================== */
+    .site-footer {
+      background: var(--color-ocean-dark);
+      color: var(--color-cream-100);
+      padding: 80px 0 36px;
+      border-top: 3px solid var(--color-cedar);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand h2 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.85rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.92rem;
+      color: var(--color-cream-400);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 340px;
+    }
+
+    .spec-checklist {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(201, 168, 128, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--color-cream-300);
+    }
+
+    .spec-checklist strong {
+      color: var(--color-gold);
+    }
+
+    .footer-col h4 {
+      font-family: "Noto Serif TC", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-gold-soft);
+      margin-bottom: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--color-cream-400);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating Action Button (FAB) */
+    .floating-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      background: linear-gradient(135deg, var(--color-cedar) 0%, var(--color-cedar-dark) 100%);
+      color: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(109, 78, 45, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.4);
+      transition: var(--transition);
+    }
+
+    .floating-fab:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 14px 32px rgba(109, 78, 45, 0.6);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       Responsive Breakpoints
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .craft-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .why-steam-grid {
+        grid-template-columns: 1fr;
+      }
+      .booking-card-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-trigger {
+        display: block;
+      }
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--color-cream-100);
+        flex-direction: column;
+        padding: 30px 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--color-cream-300);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        transition: transform 0.35s ease;
+      }
+      .nav-menu.active {
+        transform: translateY(0);
+      }
+      .header-cta-group .btn {
+        display: none;
+      }
+      .hero-features-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .origin-grid {
+        grid-template-columns: 1fr;
+      }
+      .guide-triad-grid {
+        grid-template-columns: 1fr;
+      }
+      .stores-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .booking-form-panel {
+        padding: 36px 24px;
+      }
+      .booking-intro-panel {
+        padding: 36px 24px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="header" id="top">
-    <nav class="nav container" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到綠天咖啡首頁"><span class="brand-symbol" aria-hidden="true"></span><span>綠天咖啡<small>GREEN SKY COFFEE</small></span></a>
-      <button class="menu-button" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">咖啡介紹</a>
-        <a href="#selection">產地選豆</a>
-        <a href="#brew">沖煮特色</a>
-        <a class="nav-book" href="#visit">門市資訊</a>
+
+  <!-- ==========================================
+       Header & Navigation Bar
+       ========================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" title="清蒸魚 首頁">
+        <div class="brand-mark">
+          <!-- Steamer / Fish stylized SVG -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3c-4.97 0-9 1.79-9 4v10c0 2.21 4.03 4 9 4s9-1.79 9-4V7c0-2.21-4.03-4-9-4z"/>
+            <path d="M3 12c0 2.21 4.03 4 9 4s9-1.79 9-4"/>
+            <path d="M12 7c2 0 3-1 3-2"/>
+            <path d="M9 7c1 0 2-1 2-2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>清蒸魚</h1>
+          <span>STEAMED MACKEREL ARTISAN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#origin">產地溯源</a></li>
+          <li><a href="#craft">清蒸工藝</a></li>
+          <li><a href="#menu">現撈菜單</a></li>
+          <li><a href="#guide">品味指南</a></li>
+          <li><a href="#reviews">品質口碑</a></li>
+          <li><a href="#stores">門市據點</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button & Mobile Hamburger -->
+      <div class="header-cta-group">
+        <a href="#booking" class="btn btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.9rem;">
+          <span>🐟 立即預訂現蒸</span>
+        </a>
+        <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="切換選單">
+          ☰
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid container">
-        <div class="reveal">
-          <p class="eyebrow">SMALL BATCH · SPECIALTY COFFEE</p>
-          <h1 id="heroTitle">從產地，<br>到杯中的<br><em>一片綠。</em></h1>
-          <p class="hero-lede">綠天咖啡以小批次烘焙與專注手沖，讓每一支咖啡豆的土壤、海拔與陽光，都在你的杯中留下清晰的痕跡。</p>
-          <div class="hero-actions"><a class="button button-main" href="#selection">品味本季選豆 <span class="icon-arrow">→</span></a><a class="button button-light" href="#story">認識綠天</a></div>
-          <p class="hero-signature">GROWN WITH CARE · BREWED WITH PATIENCE</p>
+  <!-- ==========================================
+       Hero Section: 品牌主視覺與核心承諾
+       ========================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tagline">
+          <span class="pulse-dot"></span>
+          <span>現撈極鮮・每日產地產銷履歷直送</span>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="sun-disc"></div><div class="hill"></div>
-          <div class="coffee-plant"><span class="stem"></span><span class="leaf leaf-a"></span><span class="leaf leaf-b"></span><span class="leaf leaf-c"></span><span class="leaf leaf-d"></span><span class="leaf leaf-e"></span><span class="bean bean-1"></span><span class="bean bean-2"></span><span class="bean bean-3"></span></div>
-          <p class="origin-tag"><b>1,850m</b>高海拔慢熟<br>保留明亮酸質</p>
-        </div>
-      </div>
-      <p class="scroll-hint">SCROLL TO EXPLORE</p>
-    </section>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="story-grid container">
-        <div class="origin-window reveal" aria-hidden="true"><div class="origin-sun"></div><div class="origin-hill-one"></div><div class="origin-hill-two"></div><p class="origin-label"><b>HUILA, COLOMBIA</b>ALTITUDE 1,850M</p><div class="story-note"><b>OUR STARTING POINT</b><p>每一杯的起點，都在一片認真生長的土地。</p></div></div>
-        <div class="reveal">
-          <p class="eyebrow">FROM SOIL TO CUP</p>
-          <h2 class="title" id="storyTitle">我們想讓你喝見，<br>咖啡豆的<strong>來處</strong>。</h2>
-          <p class="copy">好的咖啡從不只是一串風味名詞。它來自高地的晨霧、果實成熟的速度，以及農人日復一日的照看。我們走近每個產區，只為把那些真實而細緻的不同，好好留在一杯咖啡裡。</p>
-          <p class="copy">從選豆、烘焙到注水，少一點干擾，多一點尊重，讓風土自己說話。</p>
-          <a class="story-link" href="#brew">看見我們的沖煮方式 <span>→</span></a>
-        </div>
-      </div>
-    </section>
+        <h2 class="hero-title">
+          唯有最頂級的鮮度，<br>
+          才經得起<span class="highlight-cedar">杉木清蒸</span>的考驗。
+        </h2>
 
-    <section class="selection" id="selection" aria-labelledby="selectionTitle">
-      <div class="container">
-        <div class="section-head reveal"><div><p class="eyebrow">SEASONAL COFFEE</p><h2 class="title" id="selectionTitle">此刻，來自三座<strong>山的禮物</strong>。</h2></div><p class="copy">為喜歡探索的人挑選三款單一產區；清爽、甜潤與醇厚，都有恰好的位置。</p></div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="bag-visual" aria-hidden="true"><div class="bag"><span class="mini-leaf"></span><b class="bag-name">耶加雪菲</b><span class="bag-origin">ETHIOPIA / WASHED</span></div></div>
-            <div class="card-body"><span class="card-index">01 / BRIGHT &amp; FLORAL</span><h3>衣索比亞・耶加雪菲</h3><p class="card-origin">G1 水洗處理｜1,950m</p><div class="flavour"><span>茉莉</span><span>柑橘</span><span>蜂蜜</span></div><div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-button" type="button" data-coffee="衣索比亞・耶加雪菲">收藏風味 ＋</button></div></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="bag-visual" aria-hidden="true"><div class="bag"><span class="mini-leaf"></span><b class="bag-name">涅里</b><span class="bag-origin">KENYA / WASHED</span></div></div>
-            <div class="card-body"><span class="card-index">02 / JUICY &amp; VIVID</span><h3>肯亞・涅里</h3><p class="card-origin">AA 水洗處理｜1,720m</p><div class="flavour"><span>黑醋栗</span><span>洛神</span><span>紅糖</span></div><div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-button" type="button" data-coffee="肯亞・涅里">收藏風味 ＋</button></div></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="bag-visual" aria-hidden="true"><div class="bag"><span class="mini-leaf"></span><b class="bag-name">慧蘭</b><span class="bag-origin">COLOMBIA / HONEY</span></div></div>
-            <div class="card-body"><span class="card-index">03 / ROUND &amp; SWEET</span><h3>哥倫比亞・慧蘭</h3><p class="card-origin">蜜處理｜1,850m</p><div class="flavour"><span>黃桃</span><span>焦糖</span><span>可可</span></div><div class="card-footer"><span class="price">NT$ 480 / 200g</span><button class="save-button" type="button" data-coffee="哥倫比亞・慧蘭">收藏風味 ＋</button></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
+        <p class="hero-description">
+          專為重視純淨品質的您而設。我們屏除繁複重油與炭焦掩蓋，嚴選挪威冰海與南方澳野生現撈鯖魚，以 98°C 活汽杉木蒸籠極速鎖鮮，呈現富含 Omega-3 的細嫩蒜瓣肉與清甜回甘的原湯。
+        </p>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="brew-grid container">
-        <div class="brew-drawing reveal" aria-hidden="true"><div class="water-lines"></div><div class="dripper"></div><div class="server"></div><p class="brew-caption">V60 / 15G : 240ML<br>92°C · 2'45''</p></div>
-        <div class="reveal">
-          <p class="eyebrow">OUR BREWING RITUAL</p>
-          <h2 class="title" id="brewTitle">讓水走慢一些，<br>讓風味<strong>更完整</strong>。</h2>
-          <p class="copy">手沖不是一套僵硬的公式，而是一次與咖啡相處的過程。我們用穩定的節奏，萃取出飽滿甜感與乾淨尾韻。</p>
-          <ol class="method-list">
-            <li><span class="method-no">01</span><span class="method-text"><b>中細研磨，保留呼吸空間</b><span>15g 咖啡豆，讓香氣與水流找到平衡。</span></span></li>
-            <li><span class="method-no">02</span><span class="method-text"><b>92°C 悶蒸，等待第一個訊號</b><span>30 秒浸潤，讓甜感從咖啡粉裡緩緩展開。</span></span></li>
-            <li><span class="method-no">03</span><span class="method-text"><b>穩定注水，完成一杯清澈</b><span>240ml 水量，在 2 分 45 秒留下完整產地輪廓。</span></span></li>
-          </ol>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary">
+            <span>🪸 立即品嚐現撈清蒸魚</span>
+          </a>
+          <a href="#origin" class="btn btn-outline-cedar">
+            <span>探索產地與清蒸工法 →</span>
+          </a>
+        </div>
+
+        <!-- 4-point Quality Ribbon -->
+        <div class="hero-features-ribbon">
+          <div class="feature-point">
+            <h4>48h</h4>
+            <p>漁港現撈直送蒸籠</p>
+          </div>
+          <div class="feature-point">
+            <h4>98°C</h4>
+            <p>杉木活汽定時蒸鎖</p>
+          </div>
+          <div class="feature-point">
+            <h4>100%</h4>
+            <p>產銷溯源安心檢驗</p>
+          </div>
+          <div class="feature-point">
+            <h4>0添加</h4>
+            <p>保留天然健康魚脂</p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="visit-grid container">
-        <div class="reveal"><p class="eyebrow">VISIT OUR BREW BAR</p><h2 class="title" id="visitTitle">到門市坐坐，<br>喝一杯剛剛好的<strong>綠意</strong>。</h2><p class="copy">讓咖啡師依照你的喜好，帶你從香氣開始認識一支豆子。這裡有手沖、有對話，也有一段可以慢下來的午後。</p><div class="details"><div class="detail"><b>ADDRESS</b><span>台北市大安區青田街 28 號</span></div><div class="detail"><b>OPENING HOURS</b><span>每日 10:00 — 19:00</span></div><div class="detail"><b>BREW BAR</b><span>手沖咖啡・選豆諮詢</span></div><div class="detail"><b>CONTACT</b><span>02 2368 0828</span></div></div></div>
-        <aside class="store-card reveal" aria-label="綠天咖啡門市資訊卡"><div class="store-inner"><p class="store-kicker">GREEN SKY BREW BAR</p><h3>在城市裡，<br>留一小片山林。</h3><p>沿著青田街的樹影走進來，讓我們為你沖一杯此刻最適合的咖啡。</p><a class="store-link" href="mailto:hello@greensky.coffee">預約選豆與手沖體驗 <span class="icon-arrow">→</span></a></div></aside>
+      <!-- Hero Visual Steamer Plate -->
+      <div class="hero-visual-card">
+        <div class="steamer-illustration-box">
+          <!-- Live Steam Animation -->
+          <div class="steam-vapor-container">
+            <div class="vapor-wave"></div>
+            <div class="vapor-wave"></div>
+            <div class="vapor-wave"></div>
+          </div>
+
+          <!-- Stylized Steamed Mackerel Dish SVG -->
+          <svg class="dish-plate-svg" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Steamer Bamboo Base -->
+            <ellipse cx="160" cy="190" rx="140" ry="38" fill="#D6C1A5" stroke="#A47E53" stroke-width="4"/>
+            <path d="M20 190 v-30 c0 -21 62.7 -38 140 -38 s140 17 140 38 v30 c0 21 -62.7 38 -140 38 s-140 -17 -140 -38z" fill="#E6D7C3" stroke="#A47E53" stroke-width="4"/>
+            <ellipse cx="160" cy="160" rx="136" ry="34" fill="#C9A880"/>
+            
+            <!-- Porcelain Plate -->
+            <ellipse cx="160" cy="154" rx="122" ry="28" fill="#FDFBF7" stroke="#CCD5D6" stroke-width="3"/>
+            <ellipse cx="160" cy="154" rx="114" ry="24" fill="#F4F8F8"/>
+
+            <!-- Natural Steam Broth Liquid -->
+            <ellipse cx="160" cy="155" rx="100" ry="18" fill="rgba(194, 155, 77, 0.28)"/>
+
+            <!-- Steamed Mackerel Body (Silvery-blue with tiger stripes) -->
+            <path d="M72 154 c20 -14 130 -16 174 0 c-24 16 -134 16 -174 0 z" fill="#718B99" stroke="#48606C" stroke-width="2.5"/>
+            <path d="M84 152 c20 -8 110 -10 150 0 c-20 8 -110 8 -150 0 z" fill="#DFE8EC"/>
+            
+            <!-- Mackerel Signature Blue-Green Wave Back Stripes -->
+            <path d="M120 148 Q125 152 130 149 M140 147 Q146 153 152 148 M164 147 Q170 153 176 148 M188 148 Q194 153 200 149" stroke="#254252" stroke-width="2.5" stroke-linecap="round"/>
+            
+            <!-- Garnish: Scallion ribbons & Ginger strips -->
+            <!-- Ginger (Warm Yellowish sticks) -->
+            <path d="M135 151 L175 149 M145 153 L185 152 M150 148 L170 154" stroke="#DDB864" stroke-width="2.2" stroke-linecap="round"/>
+            <!-- Scallion (Vibrant Green curves) -->
+            <path d="M128 153 Q140 144 155 150 M148 152 Q162 143 178 151 M160 153 Q175 145 192 152" stroke="#4E8D52" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- Hot Camellia Oil Droplets -->
+            <circle cx="130" cy="155" r="2.5" fill="#E8BD56" opacity="0.8"/>
+            <circle cx="178" cy="154" r="2" fill="#E8BD56" opacity="0.8"/>
+            <circle cx="152" cy="156" r="3" fill="#E8BD56" opacity="0.8"/>
+          </svg>
+
+          <!-- Floating Quality Seal Badge -->
+          <div class="hero-quality-seal">
+            <div class="seal-icon">✦</div>
+            <div class="seal-info">
+              <strong>重視品質・頂級保證</strong>
+              <span>無重金屬・無化學保鮮劑殘留</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid container">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-symbol" aria-hidden="true"></span><span>綠天咖啡<small>GREEN SKY COFFEE</small></span></a><p>從一顆用心生長的咖啡果實，到你手上安靜的一杯。</p></div>
-      <div><p class="footer-heading">EXPLORE</p><ul class="footer-list"><li><a href="#story">咖啡介紹</a></li><li><a href="#selection">產地選豆</a></li><li><a href="#brew">沖煮特色</a></li></ul></div>
-      <div><p class="footer-heading">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@greensky.coffee">hello@greensky.coffee</a></li><li>台北市大安區青田街 28 號</li><li>每日 10:00 — 19:00</li></ul></div>
     </div>
-    <div class="footer-bottom container"><span>© 2026 GREEN SKY COFFEE. ALL RIGHTS RESERVED.</span><span>GROWN SLOW · BREWED CLEAR</span></div>
+  </section>
+
+  <!-- ==========================================
+       Promotion Ticker Bar: 吸引消費激勵專區
+       ========================================== -->
+  <aside class="incentive-banner" aria-label="限時優惠專區">
+    <div class="container incentive-content">
+      <div class="incentive-left">
+        <span class="incentive-tag">限時消費禮遇</span>
+        <div class="incentive-text">
+          <h4>【初次品鮮限定】線上預訂任選現撈清蒸鯖魚雙人盛宴，即贈「阿里山冷泡高山茶」兩席</h4>
+          <p>每日清晨低溫活水到貨，限量 40 尾鮮蒸出爐，敬請提前預留席次。</p>
+        </div>
+      </div>
+      <div>
+        <a href="#booking" class="btn btn-gold">
+          <span>立即領取優惠預訂 ➔</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       Origin Section: 強調鯖魚產地溯源
+       ========================================== -->
+  <section class="origin-section" id="origin">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Pristine Provenance</div>
+        <h2 class="section-title">
+          好魚無須掩蓋，<em>鯖魚雙產地</em>極致溯源
+        </h2>
+        <p class="section-desc">
+          重視品質的靈魂在於產地本質。我們跨越八千公里，自北極圈純淨冰海與台灣第一大鯖魚漁港雙線直送，給予饕客最頂級的油脂豐潤與緊緻彈性。
+        </p>
+      </div>
+
+      <!-- Two Origin Comparative Cards -->
+      <div class="origin-grid">
+        <!-- Origin 1: Norwegian Cold Water -->
+        <div class="origin-card">
+          <div class="origin-header">
+            <div class="origin-title-box">
+              <h3>挪威北冰洋野生鯖魚</h3>
+              <span>ARCTIC COLD-WATER MACKEREL</span>
+            </div>
+            <div class="origin-icon-stamp" title="純淨冰海產地">❄️</div>
+          </div>
+
+          <ul class="origin-specs-list">
+            <li>
+              <strong>地理環境</strong>
+              <span>北緯 62° 峽灣冷洌冰海，水質零污染且長年低溫</span>
+            </li>
+            <li>
+              <strong>油脂含量</strong>
+              <span>天然蓄脂高達 22%~28%，富含珍貴 DHA 與 EPA</span>
+            </li>
+            <li>
+              <strong>肉質特性</strong>
+              <span>如白玉霜降般入口即化，清蒸後魚脂融化於原湯中，甘美豐盈</span>
+            </li>
+            <li>
+              <strong>捕撈保鮮</strong>
+              <span>MSC 國際永續認證船隊，起網後 2 小時內 -35°C 急速鎖鮮</span>
+            </li>
+          </ul>
+
+          <div class="origin-taste-tag">
+            <strong>主廚清蒸講評：</strong>「冰海鯖魚皮下脂層豐厚，以杉木活汽蒸透後，油脂與蔥薑融為一體，絲毫無腥，是喜愛豐潤滑嫩口感消費者的首選。」
+          </div>
+        </div>
+
+        <!-- Origin 2: Nanfang'ao Fresh Port Catch -->
+        <div class="origin-card">
+          <div class="origin-header">
+            <div class="origin-title-box">
+              <h3>台灣宜蘭南方澳現撈鯖魚</h3>
+              <span>NANFANG'AO DAILY FRESH CATCH</span>
+            </div>
+            <div class="origin-icon-stamp" title="台灣現撈產地">⛵</div>
+          </div>
+
+          <ul class="origin-specs-list">
+            <li>
+              <strong>地理環境</strong>
+              <span>太平洋黑潮暖流交會海域，浮游生物豐美，海流湍急</span>
+            </li>
+            <li>
+              <strong>肉質特性</strong>
+              <span>因洋流逆游鍛鍊，肌肉纖維緊實彈脆，蒜瓣肌理分明</span>
+            </li>
+            <li>
+              <strong>風味輪廓</strong>
+              <span>濃郁純粹的天然海潮甜味，餘韻爽口清香，久蒸不柴</span>
+            </li>
+            <li>
+              <strong>捕撈保鮮</strong>
+              <span>在地日行漁船清晨入港，低溫活水冷鏈直達廚房，當日現蒸</span>
+            </li>
+          </ul>
+
+          <div class="origin-taste-tag">
+            <strong>主廚清蒸講評：</strong>「南方澳在地鯖魚最大的魅力是活跳新鮮！清蒸能完全吃出大海的鮮甜跳躍感，搭配純黑豆蔭油更是畫龍點睛。」
+          </div>
+        </div>
+      </div>
+
+      <!-- Traceability Assurance Bar -->
+      <div class="traceability-bar">
+        <div class="trace-item">
+          <div class="trace-badge">📋</div>
+          <div>
+            <h5>每尾專屬產銷履歷</h5>
+            <p>清楚透明標示捕撈船號、日期與海域座標</p>
+          </div>
+        </div>
+        <div class="trace-item">
+          <div class="trace-badge">🔬</div>
+          <div>
+            <h5>SGS 嚴格檢驗合格</h5>
+            <p>重金屬、微塑膠、多氯聯苯 0 檢出報告公開</p>
+          </div>
+        </div>
+        <div class="trace-item">
+          <div class="trace-badge">❄️</div>
+          <div>
+            <h5>全程全程 -18°C 恆溫冷鏈</h5>
+            <p>自碼頭上岸至入籠蒸煮，保鮮無任何溫度斷層</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Steaming Craft Section: 強調清蒸方式工藝
+       ========================================== -->
+  <section class="steaming-section" id="craft">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Artisanal Steaming Method</div>
+        <h2 class="section-title">
+          喚醒鮮度之魂，<em>古法杉木清蒸</em>四重奏
+        </h2>
+        <p class="section-desc">
+          為什麼我們只堅持清蒸？因為高溫煎炸會氧化破壞健康的 Omega-3，而炭烤容易殘留致癌焦黑物。唯有清蒸能以最溫柔純淨的水分子，凝住 98% 活性營養。
+        </p>
+      </div>
+
+      <!-- 4 Craft Steps Grid -->
+      <div class="craft-steps-grid">
+        <!-- Step 1 -->
+        <div class="craft-step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">🔪</div>
+          <h3>手工剔刺薄鹽醒魚</h3>
+          <p>
+            職人以鑷子細心拔除微細肌間刺，並以天然日曬海鹽於魚身薄擦 8 分鐘，藉由高滲透壓逼出微量血水，鎖住細胞水分與鮮度。
+          </p>
+          <div class="step-secret-badge">
+            關鍵秘訣：鹽分濃度精準控制 1.2%
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="craft-step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">🪵</div>
+          <h3>百年手造杉木蒸籠</h3>
+          <p>
+            捨棄不鏽鋼蒸鍋！嚴選天然陳年杉木蒸籠，木料微孔會呼吸，徹底吸附多餘蒸氣水珠，絕不讓冷凝水滴回魚身造成肉爛味雜。
+          </p>
+          <div class="step-secret-badge">
+            關鍵秘訣：自帶溫潤淡雅的木質清香
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="craft-step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">⏱️</div>
+          <h3>98°C 活汽定時 7分45秒</h3>
+          <p>
+            活汽恆溫穿透魚體，肉質蛋白質在黃金熟度瞬間緊縮凝結，Omega-3 魚油完全封存在肌理之中，魚肉呈現吹彈可破的蒜瓣狀。
+          </p>
+          <div class="step-secret-badge">
+            關鍵秘訣：秒差控制，魚眼泛白清亮即起
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="craft-step-card">
+          <div class="step-number">04</div>
+          <div class="step-icon">🌱</div>
+          <h3>熱山茶油澆淋熗香</h3>
+          <p>
+            鋪上細切三星蔥絲與雲林老薑絲，澆淋古法純釀黑豆淡蔭油，最後以滾燙特級冷壓山茶油「滋」一聲熱熗，瞬間激發蔥甜並鎖住鮮汁。
+          </p>
+          <div class="step-secret-badge">
+            關鍵秘訣：低芥酸純山茶油，健康輕盈
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Steaming Comparison Box -->
+      <div class="why-steam-box">
+        <div class="why-steam-grid">
+          <div class="why-steam-text">
+            <h3>重視品質的消費者，<br>為何一致推崇「清蒸」？</h3>
+            <p>
+              許多市售烤魚為了掩蓋魚腥或放置過久，常施加厚重醬汁、味精或高溫過度炭化。清蒸魚代表著對食材源頭的絕對自信，不僅對心血管更健康，更是現代低負擔輕食的極致標竿。
+            </p>
+            <a href="#menu" class="btn btn-primary">
+              <span>檢視清蒸料理菜單 →</span>
+            </a>
+          </div>
+
+          <div>
+            <table class="nutrition-compare-table">
+              <thead>
+                <tr>
+                  <th>烹調方式</th>
+                  <th>Omega-3 保留率</th>
+                  <th>油脂氧化度</th>
+                  <th>食材天然鮮味</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td>✦ 杉木清蒸（本店）</td>
+                  <td>98.5%（極高）</td>
+                  <td>幾乎為 0（純淨）</td>
+                  <td>100% 原始甘甜</td>
+                </tr>
+                <tr>
+                  <td>高溫油炸</td>
+                  <td>32.0%（破壞嚴重）</td>
+                  <td>極高（反式脂肪風險）</td>
+                  <td>被炸油覆蓋</td>
+                </tr>
+                <tr>
+                  <td>炭火直烤</td>
+                  <td>64.0%（滴落流失）</td>
+                  <td>中偏高（焦黑碳化）</td>
+                  <td>炭味為主</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Menu Section: 現撈清蒸魚精選美饌
+       ========================================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Signature Delicacies</div>
+        <h2 class="section-title">
+          品嚐現撈旬味，<em>清蒸鯖魚經典美饌</em>
+        </h2>
+        <p class="section-desc">
+          每一道料理均現點現入蒸籠，搭配有機越光米飯、日式手作時蔬與鮮燉魚骨清湯，成就一頓令人身心舒暢的純淨饗宴。
+        </p>
+      </div>
+
+      <!-- Menu Category Filters -->
+      <div class="menu-filter-nav">
+        <button class="filter-btn active" onclick="filterDishes('all', this)">全部清蒸美饌</button>
+        <button class="filter-btn" onclick="filterDishes('classic', this)">主廚經典首選</button>
+        <button class="filter-btn" onclick="filterDishes('double', this)">雙產地盛宴套餐</button>
+        <button class="filter-btn" onclick="filterDishes('wellness', this)">養生低卡御膳</button>
+      </div>
+
+      <!-- Dishes Grid -->
+      <div class="dishes-grid" id="dishesGrid">
+
+        <!-- Dish 1 -->
+        <article class="dish-card" data-category="classic">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">挪威冰海產地</span>
+            <span class="dish-craft-badge">人氣第一位</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="85" ry="22" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="75" ry="18" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <path d="M45 106 c15 -10 80 -12 110 0 c-15 10 -80 10 -110 0 z" fill="#6B8897" stroke="#48606C" stroke-width="2"/>
+              <path d="M55 105 c12 -6 70 -6 90 0 c-12 6 -70 6 -90 0 z" fill="#EBF2F4"/>
+              <path d="M85 103 L115 101 M95 106 L125 104" stroke="#D5AE52" stroke-width="2"/>
+              <path d="M80 106 Q95 98 115 104 M100 105 Q115 97 130 105" stroke="#478A4D" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>經典蔥香活汽蒸鯖魚定食</h3>
+              <div class="dish-price">NT$ 320 <span>/ 份</span></div>
+            </div>
+            <p class="dish-description">
+              以挪威極地鯖魚為主角，鋪上細切三星蔥與雲林老薑絲，98°C 杉木活汽蒸煮 7 分鐘，熗淋純冷壓山茶油，肉質柔嫩多汁，蔥香撲鼻。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">挪威高脂鯖魚</span>
+              <span class="tag-sm">三星青蔥</span>
+              <span class="tag-sm">純釀黑豆油</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">富含 4,300mg Omega-3</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('經典蔥香活汽蒸鯖魚定食')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 2 -->
+        <article class="dish-card" data-category="classic">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">南方澳在地現撈</span>
+            <span class="dish-craft-badge">晨捕限量</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="85" ry="22" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="75" ry="18" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <path d="M45 106 c15 -10 80 -12 110 0 c-15 10 -80 10 -110 0 z" fill="#58797D" stroke="#364F52" stroke-width="2"/>
+              <path d="M55 105 c12 -6 70 -6 90 0 c-12 6 -70 6 -90 0 z" fill="#F4F8F8"/>
+              <path d="M82 104 L118 102 M90 107 L126 105" stroke="#C5A059" stroke-width="2"/>
+              <path d="M85 105 Q100 96 120 103" stroke="#3F7A44" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>南方澳鮮露黑豆蒸鯖魚定食</h3>
+              <div class="dish-price">NT$ 360 <span>/ 份</span></div>
+            </div>
+            <p class="dish-description">
+              嚴選當日黎明南方澳回港現撈鯖魚，肉質緊緻彈牙！搭配嘉義古法純釀黑豆蔭油與壺底玉露，鹹甘入喉，滿口都是新鮮大海的甜味。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">南方澳現撈</span>
+              <span class="tag-sm">黑潮鍛鍊彈牙</span>
+              <span class="tag-sm">純釀壺底油</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">高蛋白質 38g / 低負擔</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('南方澳鮮露黑豆蒸鯖魚定食')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 3 -->
+        <article class="dish-card" data-category="wellness">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">高山破布子純釀</span>
+            <span class="dish-craft-badge">古早甘醇</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="85" ry="22" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="75" ry="18" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <path d="M45 106 c15 -10 80 -12 110 0 c-15 10 -80 10 -110 0 z" fill="#677D86" stroke="#48606C" stroke-width="2"/>
+              <!-- Cordia Berries -->
+              <circle cx="85" cy="104" r="4.5" fill="#5A472E"/>
+              <circle cx="98" cy="102" r="4" fill="#5A472E"/>
+              <circle cx="114" cy="103" r="5" fill="#5A472E"/>
+              <path d="M90 105 Q105 97 125 104" stroke="#478A4D" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>玉露樹子甘泉蒸鯖魚定食</h3>
+              <div class="dish-price">NT$ 340 <span>/ 份</span></div>
+            </div>
+            <p class="dish-description">
+              採用南投高山手採野生破布子（樹子），經一年老缸發酵甘醇。微甜的樹子玉露滲透進鯖魚肉隙，生津回甘，長輩與重視清淡者最愛。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">手工陳年破布子</span>
+              <span class="tag-sm">生津降燥</span>
+              <span class="tag-sm">少鹽配方</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">低鈉配方 / 生津回甘</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('玉露樹子甘泉蒸鯖魚定食')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 4 -->
+        <article class="dish-card" data-category="wellness">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">屏東香檸鮮榨</span>
+            <span class="dish-craft-badge">清新果香</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="85" ry="22" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="75" ry="18" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <path d="M45 106 c15 -10 80 -12 110 0 c-15 10 -80 10 -110 0 z" fill="#58797D" stroke="#364F52" stroke-width="2"/>
+              <!-- Lemon slice -->
+              <circle cx="95" cy="103" r="8" fill="#DCEB6D" stroke="#A7BD2A" stroke-width="1.5"/>
+              <circle cx="118" cy="104" r="7" fill="#DCEB6D" stroke="#A7BD2A" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>青檸薄鹽鮮蒸鯖魚菲力</h3>
+              <div class="dish-price">NT$ 350 <span>/ 份</span></div>
+            </div>
+            <p class="dish-description">
+              精選九如無毒綠檸檬現切薄片入蒸，以果酸柔化魚肉纖維，出爐前灑上海鹽與新鮮蒔蘿草，滋味酸爽芳香，完全不膩口。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">極致去刺菲力</span>
+              <span class="tag-sm">天然果香維他命C</span>
+              <span class="tag-sm">健美首選</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">每份僅 390 大卡</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('青檸薄鹽鮮蒸鯖魚菲力')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 5 -->
+        <article class="dish-card" data-category="double">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">雙產地旗艦尊享</span>
+            <span class="dish-craft-badge">主廚強推</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="88" ry="23" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="78" ry="19" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <!-- Twin fish fillets side by side -->
+              <path d="M48 103 c10 -8 50 -10 70 0 c-10 8 -50 8 -70 0 z" fill="#6B8897" stroke="#48606C" stroke-width="1.8"/>
+              <path d="M85 107 c10 -8 50 -10 70 0 c-10 8 -50 8 -70 0 z" fill="#58797D" stroke="#364F52" stroke-width="1.8"/>
+              <path d="M70 102 L95 101 M105 106 L130 105" stroke="#C5A059" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>御品雙極致產地清蒸盛宴 (雙人)</h3>
+              <div class="dish-price">NT$ 680 <span>/ 套</span></div>
+            </div>
+            <p class="dish-description">
+              一次品嚐兩種頂級產地！包含「挪威冰海極脂鯖魚」半尾與「南方澳現撈黑潮鯖魚」半尾，搭配雙份主廚手作小品、日本越光米與手切昆布魚骨湯。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">挪威 × 南方澳</span>
+              <span class="tag-sm">雙重口感對比</span>
+              <span class="tag-sm">附雙人御膳</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">尊榮品質分享之選</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('御品雙極致產地清蒸盛宴 (雙人)')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dish 6 -->
+        <article class="dish-card" data-category="classic">
+          <div class="dish-visual-wrapper">
+            <span class="dish-origin-badge">私房限量功夫菜</span>
+            <span class="dish-craft-badge">義法跨界</span>
+            <svg class="dish-svg-icon" viewBox="0 0 200 140" fill="none">
+              <ellipse cx="100" cy="110" rx="85" ry="22" fill="#E6DDCF"/>
+              <ellipse cx="100" cy="106" rx="75" ry="18" fill="#FFFFFF" stroke="#D1D9DA" stroke-width="2"/>
+              <path d="M45 106 c15 -10 80 -12 110 0 c-15 10 -80 10 -110 0 z" fill="#54656F" stroke="#37474F" stroke-width="2"/>
+              <!-- Black truffle shavings -->
+              <circle cx="85" cy="104" r="3" fill="#202224"/>
+              <circle cx="100" cy="102" r="4" fill="#202224"/>
+              <circle cx="115" cy="104" r="3.5" fill="#202224"/>
+              <circle cx="130" cy="105" r="2.5" fill="#202224"/>
+            </svg>
+          </div>
+          <div class="dish-content">
+            <div class="dish-title-row">
+              <h3>黑松露干貝極鮮蒸鯖魚菲力</h3>
+              <div class="dish-price">NT$ 480 <span>/ 份</span></div>
+            </div>
+            <p class="dish-description">
+              以頂級野生鯖魚厚切菲力，鑲嵌北海道生食級干貝，出籠後點綴義大利野生黑松露醬。松露幽香引出鯖魚深層油脂鮮味，奢華絕美。
+            </p>
+            <div class="dish-flavor-tags">
+              <span class="tag-sm">義大利黑松露</span>
+              <span class="tag-sm">生食級干貝</span>
+              <span class="tag-sm">極品厚切菲力</span>
+            </div>
+            <div class="dish-bottom-action">
+              <span class="dish-nutrition-hint">星級奢華風味演繹</span>
+              <button class="btn-select-dish" onclick="selectDishForBooking('黑松露干貝極鮮蒸鯖魚菲力')">
+                <span>＋ 預訂品嚐</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Tasting Guide: 清蒸魚黃金三吃法 (品味指南)
+       ========================================== -->
+  <section class="tasting-guide-section" id="guide">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow" style="color: var(--color-gold);">Connoisseur Ritual</div>
+        <h2 class="section-title">
+          品嚐清蒸魚的<em>黃金三部曲</em>
+        </h2>
+        <p class="section-desc">
+          懂得品嚐的饕客，不會只吃魚肉。跟隨職人儀式，從天然清澈的純魚精華原湯，一路品味至蒜瓣魚肌與茶漬泡飯，層次悠遠。
+        </p>
+      </div>
+
+      <div class="guide-triad-grid">
+        <div class="guide-triad-card">
+          <div class="triad-badge">1</div>
+          <h3>壹・先舀清蒸原湯</h3>
+          <p>
+            在動筷吃肉之前，先以瓷匙舀起蒸盤底部的一匙清澈高湯。這是鯖魚在 98°C 蒸餾活汽下釋出的純淨原汁，融合了老薑的微辛與青蔥的香醇，甘甜透骨。
+          </p>
+        </div>
+
+        <div class="guide-triad-card">
+          <div class="triad-badge">2</div>
+          <h3>貳・筷探蒜瓣肥肉</h3>
+          <p>
+            用筷尖輕輕挑起背鰭下方的厚實魚肉，感受如同蒜瓣般自然綻放的細膩肌理。入口時先享受魚皮膠質的滑潤，再體會天然 Omega-3 魚油在舌尖化開的豐盈。
+          </p>
+        </div>
+
+        <div class="guide-triad-card">
+          <div class="triad-badge">3</div>
+          <h3>叄・蔭油青蔥茶漬飯</h3>
+          <p>
+            吃到最後，將剩下的魚肉、浸潤了蔭油熱油的青蔥絲，一同盛入半碗熱米飯中，倒入店家隨附的高山烏龍茶。一碗暖胃舒心的「清蒸鯖魚茶漬飯」為盛宴畫下完美句點。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Testimonials: 重視品質的消費者真實口碑
+       ========================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Distinguished Diners</div>
+        <h2 class="section-title">
+          重視品質的消費者，<em>如何評價清蒸魚？</em>
+        </h2>
+        <p class="section-desc">
+          來自營養師、米其林愛好者與追求全家健康的顧客真實回饋。好食材會說話，清蒸的純粹騙不了舌尖。
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div>
+            <div class="stars-line">★★★★★</div>
+            <p class="review-quote">
+              「身為臨床營養師，我對外食油脂品質極度挑剔。這裡的鯖魚產地標示一清二楚，杉木清蒸完全保留了 Omega-3，完全沒有過度炭烤的焦苦味與油膩感。這是我每週必訪的養生餐桌！」
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">👩🏻‍⚕️</div>
+            <div class="reviewer-meta">
+              <h4>林語婕 醫師 / 臨床營養學顧問</h4>
+              <span>固定每週內用預訂顧客</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div>
+            <div class="stars-line">★★★★★</div>
+            <p class="review-quote">
+              「過去吃鯖魚最怕魚腥與細刺，但清蒸魚的手工去刺非常扎實，而且杉木蒸籠讓水分剛好不爛，南方澳現撈鯖魚的脆彈感驚為天人！連平時不愛吃魚的小孩都搶著吃光。」
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">👨🏻‍💼</div>
+            <div class="reviewer-meta">
+              <h4>陳建宇 建築事務所主持設計師</h4>
+              <span>家庭聚餐常客・重視天然無添加</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div>
+            <div class="stars-line">★★★★★</div>
+            <p class="review-quote">
+              「吃過很多日式居酒屋的烤鹹魚，常常死鹹又口乾。這家主打『現撈清蒸』真正找回了鯖魚該有的高貴氣質。熱山茶油熗下去的瞬間，香氣優雅至極，米白高雅的氛圍更是享受。」
+            </p>
+          </div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">✍🏻</div>
+            <div class="reviewer-meta">
+              <h4>蘇敏慈 美食專欄作家</h4>
+              <span>台灣旬味飲食評論家</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Booking & Ordering Section: 線上預訂與消費行動
+       ========================================== -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="booking-card-wrapper">
+        
+        <!-- Left Panel: Brand Promises & Phone Hotline -->
+        <div class="booking-intro-panel">
+          <div>
+            <div class="badge-pill" style="margin-bottom: 14px;">產地現撈保證</div>
+            <h3>即刻預訂席次<br>品嚐極鮮蒸魚</h3>
+            <p>
+              為了確保每一尾清蒸魚均在最佳黃金賞味期，每日現撈限量供應。歡迎提前預留席次或外帶現蒸自取，享受免等待的極致鮮甜。
+            </p>
+
+            <ul class="booking-guarantees">
+              <li><span>✓</span> 嚴選產銷履歷驗證現撈鯖魚</li>
+              <li><span>✓</span> 杉木蒸籠現點現蒸，絕不重覆復熱</li>
+              <li><span>✓</span> 享有當週初次預訂專屬高山冷泡茶贈禮</li>
+              <li><span>✓</span> 支援外帶保溫專用杉木容器包裝</li>
+            </ul>
+          </div>
+
+          <div class="service-hotline-box">
+            <small>貴賓專屬訂位服務電話</small>
+            <strong>(02) 2736-5101</strong>
+            <p style="font-size: 0.8rem; color: #CCD5D6; margin-top: 4px;">營業時間：每日 11:30 - 14:30 / 17:30 - 21:30</p>
+          </div>
+        </div>
+
+        <!-- Right Panel: Interactive Form -->
+        <div class="booking-form-panel">
+          <!-- Submission Confirmation Alert -->
+          <div class="booking-alert-box" id="bookingSuccessAlert">
+            <strong>✓ 預約成功！</strong> 感謝您的預訂。我們已為您保留每日現撈鯖魚席次，簡訊確認通知已同步發送至您的手機。
+          </div>
+
+          <h4>預約內用席次 / 現蒸外帶單</h4>
+          <p class="sub-text">填寫下方資訊，系統將立即為您安排活汽蒸籠出餐排程。</p>
+
+          <form id="steamedFishOrderForm" onsubmit="handleBookingSubmit(event)">
+            <div class="form-grid">
+              
+              <div class="form-group">
+                <label for="custName">貴賓姓名 *</label>
+                <input type="text" id="custName" class="form-control" placeholder="請輸入姓名" required>
+              </div>
+
+              <div class="form-group">
+                <label for="custPhone">聯絡電話 *</label>
+                <input type="tel" id="custPhone" class="form-control" placeholder="例：0912-345-678" required>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingType">預約類型 *</label>
+                <select id="bookingType" class="form-control" required>
+                  <option value="dine-in">門市內用席次（現蒸入席）</option>
+                  <option value="takeout">現蒸外帶自取（杉木保溫盒）</option>
+                  <option value="cold-chain">產地急凍整尾宅配送府</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="guestCount">預約人數</label>
+                <select id="guestCount" class="form-control">
+                  <option value="1">1 位品鮮</option>
+                  <option value="2" selected>2 位（推薦雙人盛宴）</option>
+                  <option value="3-4">3 - 4 位家庭聚餐</option>
+                  <option value="5+">5 位以上（包廂預留）</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="bookDate">預約日期 *</label>
+                <input type="date" id="bookDate" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="bookTime">到店或取餐時段 *</label>
+                <select id="bookTime" class="form-control" required>
+                  <option value="11:30">11:30（午間首輪）</option>
+                  <option value="12:30">12:30（午間尖峰）</option>
+                  <option value="13:30">13:30（午間悠閒）</option>
+                  <option value="17:30">17:30（晚間首輪）</option>
+                  <option value="18:30" selected>18:30（晚間熱門）</option>
+                  <option value="19:30">19:30（晚間二輪）</option>
+                  <option value="20:30">20:30（晚間品鮮）</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="selectedDishes">預選清蒸魚品項（可從上方菜單點擊自動帶入）</label>
+                <input type="text" id="selectedDishes" class="form-control" placeholder="例如：經典蔥香活汽蒸鯖魚定食、南方澳鮮露黑豆蒸鯖魚定食">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="originPreference">鯖魚產地偏好</label>
+                <select id="originPreference" class="form-control">
+                  <option value="recommend">交由主廚依當日最鮮捕撈推薦</option>
+                  <option value="norway">偏好【挪威冰海】極致油脂滑嫩口感</option>
+                  <option value="taiwan">偏好【南方澳現撈】黑潮緊實脆甜口感</option>
+                  <option value="both">雙產地均想體驗</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="specialNotes">客製需求備註（去刺特別加強 / 少鹽 / 不加蔥薑香菜）</label>
+                <textarea id="specialNotes" rows="2" class="form-control" placeholder="如有幼童或長輩用餐、過敏食材請在此告知..."></textarea>
+              </div>
+
+            </div>
+
+            <div class="booking-submit-row">
+              <div class="privacy-notice">
+                🔒 本店重視顧客隱私，資料僅用於鮮魚席次預留與通知。
+              </div>
+              <button type="submit" class="btn btn-primary" style="padding: 0.95rem 2.4rem;">
+                <span>確認送出預訂單 ➔</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Store Information: 門市據點指引
+       ========================================== -->
+  <section class="store-section" id="stores">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-eyebrow">Locations</div>
+        <h2 class="section-title">品味極鮮，<em>門市據點指引</em></h2>
+        <p class="section-desc">我們營造寧靜雅緻的米白色系木質空間，讓您在純淨無負擔的環境中，靜心品嚐蒸氣騰騰的現撈鮮魚。</p>
+      </div>
+
+      <div class="stores-grid">
+        <div class="store-card">
+          <h4>📍 台北大安旗艦本店</h4>
+          <p><strong>地址：</strong>台北市大安區仁愛路四段 108 號（捷運忠孝敦化站 6 號出口）</p>
+          <p><strong>專線：</strong>(02) 2736-5101</p>
+          <p><strong>座席：</strong>杉木吧台單人位、4-8人半開放包廂</p>
+          <p><strong>特色：</strong>透明杉木蒸台活汽展示、全產地履歷日報看板</p>
+        </div>
+
+        <div class="store-card">
+          <h4>📍 宜蘭南方澳漁港概念店</h4>
+          <p><strong>地址：</strong>宜蘭縣蘇澳鎮江夏路 26 號（南方澳第一漁港碼頭旁）</p>
+          <p><strong>專線：</strong>(03) 996-5101</p>
+          <p><strong>座席：</strong>全景海港觀景席、家庭聚餐大圓桌</p>
+          <p><strong>特色：</strong>當晨現撈魚獲下船即刻入蒸、黑潮海景一覽無遺</p>
+        </div>
+
+        <div class="store-card">
+          <h4>📍 台中七期概念館（即將登場）</h4>
+          <p><strong>地址：</strong>台中市西屯區市政北二路 88 號</p>
+          <p><strong>專線：</strong>(04) 2258-5101</p>
+          <p><strong>座席：</strong>日式庭園流水席、專屬貴賓尊榮包廂</p>
+          <p><strong>特色：</strong>籌備試營運中，敬請期待最新公告與預約開放</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer: 品牌資訊與網頁規格標示
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <h2>清蒸魚</h2>
+          <p>
+            現撈清蒸魚專賣。堅持純淨無添加，以古法杉木活汽蒸籠喚醒挪威與南方澳鯖魚的鮮甜本味。專為重視品質的消費者守護每一口安心。
+          </p>
+          <div style="font-size: 1.3rem; display: flex; gap: 16px;">
+            <span title="產地履歷">🌊</span>
+            <span title="杉木蒸籠">🪵</span>
+            <span title="純淨健康">🌱</span>
+            <span title="安心檢驗">✦</span>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="footer-col">
+          <h4>核心特色</h4>
+          <ul class="footer-links">
+            <li><a href="#origin">挪威北冰洋冰海鯖魚</a></li>
+            <li><a href="#origin">南方澳晨捕現撈黑潮鯖魚</a></li>
+            <li><a href="#craft">百年陳年杉木蒸籠工法</a></li>
+            <li><a href="#craft">98°C 恆溫活汽鎖鮮秘訣</a></li>
+          </ul>
+        </div>
+
+        <!-- Service & Booking -->
+        <div class="footer-col">
+          <h4>美饌服務</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">現撈清蒸魚菜單全覽</a></li>
+            <li><a href="#booking">線上訂位與現蒸外帶</a></li>
+            <li><a href="#guide">清蒸魚黃金三吃法</a></li>
+            <li><a href="#stores">全台門市營業據點</a></li>
+          </ul>
+        </div>
+
+        <!-- Specification Compliance (作業規格呈現) -->
+        <div class="footer-col">
+          <h4>網頁規格標示 (refined.md)</h4>
+          <div class="spec-checklist">
+            <strong>網站名稱：</strong>清蒸魚<br>
+            <strong>用途：</strong>現撈清蒸魚<br>
+            <strong>目標受眾：</strong>重視品質的消費者<br>
+            <strong>品牌風格：</strong>清蒸鯖魚<br>
+            <strong>品牌顏色：</strong>米白 (#FDFBF7 / #F9F6F0)<br>
+            <strong>功能：</strong>吸引客戶消費清蒸魚<br>
+            <strong>備註：</strong>強調鯖魚產地與清蒸方式
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 清蒸魚 Steamed Mackerel Artisan. All rights reserved. 依據 refined.md 規格精心製作.
+        </div>
+        <div>
+          學號：11515101 | 姓名：葉軒妤 | 網頁規格作業專用
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- Floating Call-To-Action (FAB) -->
+  <a href="#booking" class="floating-fab" title="立即預約現蒸鮮魚">
+    <span>🐟</span>
+    <span>立即預訂現蒸</span>
+  </a>
+
+  <!-- ==========================================
+       JavaScript Interactivity
+       ========================================== -->
   <script>
-    const menuButton = document.querySelector('.menu-button');
-    const navLinks = document.getElementById('navLinks');
-    menuButton.addEventListener('click', () => {
-      const opened = navLinks.classList.toggle('open');
-      menuButton.setAttribute('aria-expanded', String(opened));
-      menuButton.setAttribute('aria-label', opened ? '關閉導覽選單' : '開啟導覽選單');
-      menuButton.textContent = opened ? '×' : '☰';
+    // 初始化日期輸入框為今日，且不可選過去日期
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('bookDate');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
     });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', '開啟導覽選單');
-      menuButton.textContent = '☰';
-    }));
 
-    const toast = document.getElementById('toast');
-    let toastTimer;
-    function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
-    }
-    document.querySelectorAll('[data-coffee]').forEach(button => button.addEventListener('click', () => {
-      showToast(`已收藏「${button.dataset.coffee}」，下次來門市時可以問問它。`);
-    }));
+    // 手機版選單切換開關
+    const mobileMenuTrigger = document.getElementById('mobileMenuTrigger');
+    const navMenu = document.getElementById('navMenu');
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(element => element.classList.add('in'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            observer.unobserve(entry.target);
-          }
+    if (mobileMenuTrigger && navMenu) {
+      mobileMenuTrigger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      // 點擊選單內部項目自動收合
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
         });
-      }, { threshold: .12 });
-      revealItems.forEach(element => observer.observe(element));
+      });
+    }
+
+    // 菜單類別動態篩選
+    function filterDishes(category, btnElement) {
+      const cards = document.querySelectorAll('.dish-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 點擊菜單卡片快速加入預約表單中
+    function selectDishForBooking(dishName) {
+      const inputField = document.getElementById('selectedDishes');
+      if (inputField) {
+        if (inputField.value.trim() === '') {
+          inputField.value = dishName;
+        } else {
+          // 避免重複添加相同菜色
+          if (!inputField.value.includes(dishName)) {
+            inputField.value += '、' + dishName;
+          }
+        }
+
+        // 平滑滾動至預約表單區域
+        const bookingSection = document.getElementById('booking');
+        if (bookingSection) {
+          bookingSection.scrollIntoView({ behavior: 'smooth' });
+          inputField.focus();
+        }
+      }
+    }
+
+    // 處理預約表單提交
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+      const alertBox = document.getElementById('bookingSuccessAlert');
+      const form = document.getElementById('steamedFishOrderForm');
+      const custName = document.getElementById('custName').value;
+
+      if (alertBox) {
+        alertBox.innerHTML = `<strong>✓ 預約成功！</strong> 感謝 <strong>${custName}</strong> 貴賓。我們已為您保留每日現撈鯖魚席次，確認簡訊與訂單代碼已同步發送至您的手機。`;
+        alertBox.style.display = 'block';
+        alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // 重置表單但保留今日日期
+      const today = new Date().toISOString().split('T')[0];
+      form.reset();
+      const dateInput = document.getElementById('bookDate');
+      if (dateInput) {
+        dateInput.value = today;
+      }
+
+      // 8 秒後自動淡出提示
+      setTimeout(() => {
+        if (alertBox) {
+          alertBox.style.display = 'none';
+        }
+      }, 8000);
     }
   </script>
 </body>
