@@ -238,12 +238,12 @@
       width: 44px;
       height: 44px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--yellow-light), var(--yellow-primary));
+      background: linear-gradient(135deg, #78350F, #B45309);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 24px;
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 4px 12px rgba(120, 53, 15, 0.35);
       border: 2px solid #FFFFFF;
     }
 
@@ -327,7 +327,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 0.9fr 1.1fr;
       align-items: center;
       gap: 50px;
     }
@@ -1375,10 +1375,28 @@
        ========================================== -->
   <section class="hero-section" id="home">
     <div class="container hero-grid">
-      <!-- Left Content -->
+      <!-- Left Visual (左側炭烤料理主圖) -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=80" 
+            alt="現烤鹹魚黃金焦香烤鯖魚" 
+            class="hero-image"
+          >
+        </div>
+        <div class="hero-badge-float">
+          <div class="hero-badge-icon">🐟</div>
+          <div class="hero-badge-text">
+            <strong>現點現烤・香氣四溢</strong>
+            <span>特選挪威厚切一夜干鯖魚</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Content (右側文案訴求) -->
       <div class="hero-content">
         <div class="hero-tag">
-          <span>🔥</span> 職人炭火現點現烤・鯖魚專門店
+          <span>🔥</span> 炭火現點現烤・鯖魚專門店
         </div>
         <h2 class="hero-title">
           炭火焦香油脂作響<br>
@@ -1409,24 +1427,6 @@
           <div class="stat-item">
             <h3>4.9★</h3>
             <p>老饕滿分美味好評</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Visual -->
-      <div class="hero-visual">
-        <div class="hero-image-wrapper">
-          <img 
-            src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=80" 
-            alt="現烤鹹魚黃金焦香烤鯖魚" 
-            class="hero-image"
-          >
-        </div>
-        <div class="hero-badge-float">
-          <div class="hero-badge-icon">🐟</div>
-          <div class="hero-badge-text">
-            <strong>現點現烤・香氣四溢</strong>
-            <span>特選挪威厚切一夜干鯖魚</span>
           </div>
         </div>
       </div>
@@ -1928,7 +1928,7 @@
           &copy; 2026 烤鹹魚 Charcoal Grilled Salted Fish. All rights reserved. 網頁規格作業專用.
         </div>
         <div>
-          學號：11515101 | 專為現烤鹹魚愛好者設計
+          學號：11515101 | 專為現烤鹹魚愛好者
         </div>
       </div>
     </div>
