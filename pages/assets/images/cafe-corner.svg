@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 590" role="img" aria-labelledby="title desc">
+  <title id="title">藍天咖啡的自在角落</title>
+  <desc id="desc">有大片窗景、室內植物、木桌與一杯咖啡的空間示意圖。</desc>
+  <defs>
+    <linearGradient id="window" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dbe8df"/><stop offset="1" stop-color="#99b9a7"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f3efe3"/><stop offset="1" stop-color="#e4dfd0"/></linearGradient>
+  </defs>
+  <rect width="840" height="590" fill="url(#wall)"/>
+  <rect x="48" y="42" width="450" height="338" fill="url(#window)"/>
+  <circle cx="392" cy="119" r="43" fill="#f1d8a2"/>
+  <path d="M48 276c93-58 154-72 235-41 74 28 137 19 215-21v166H48z" fill="#89a28a" opacity=".83"/>
+  <path d="M48 326c96-43 176-27 249-10s126 12 201-20v84H48z" fill="#587563" opacity=".8"/>
+  <path d="M266 42v338M48 217h450" stroke="#f8f5eb" stroke-width="13"/>
+  <rect x="48" y="380" width="450" height="21" fill="#87654e"/>
+  <rect y="455" width="840" height="135" fill="#c39a72"/>
+  <path d="M0 476c165 24 318 17 463 1s259-9 377 12M0 550c180-15 304-2 469 12s247 4 371-6" fill="none" stroke="#e1bd96" stroke-width="4" opacity=".7"/>
+  <path d="M604 459c0-93 3-161 14-216m-13 131c-57-14-82-47-79-78 3-28 33-37 63-17 16 11 25 28 28 54m2 92c34-60 71-79 95-63 25 17 12 54-18 77-22 17-49 23-77 21m-15-115c-24-49-20-85 4-98 23-12 47 9 52 41 4 23-1 48-15 72m-19 107c-29-43-34-77-15-93 18-16 46-4 60 23 10 21 11 46 3 70" fill="#587563"/>
+  <path d="M607 411c5-62 7-114 11-168" stroke="#405c49" stroke-width="6" fill="none"/>
+  <path d="M520 459h173l-18 112H538z" fill="#a96e50"/>
+  <path d="M542 478h132" stroke="#d59b75" stroke-width="6"/>
+  <ellipse cx="347" cy="458" rx="143" ry="19" fill="#74513d"/>
+  <path d="M223 451h246l-24 22H245z" fill="#79553f"/>
+  <path d="M254 472v93m177-93v93" stroke="#674936" stroke-width="13"/>
+  <ellipse cx="349" cy="441" rx="40" ry="9" fill="#eee5d4"/>
+  <path d="M323 407h51v32h-51z" fill="#f6f0e2"/>
+  <path d="M374 414h8c11 0 15 15 0 19h-8" fill="none" stroke="#f6f0e2" stroke-width="7"/>
+  <ellipse cx="348" cy="407" rx="25" ry="5" fill="#6b422d"/>
+  <path d="M338 395c-8-10 9-16 3-26m17 26c-8-10 9-16 3-25" fill="none" stroke="#fff9e9" stroke-width="3" stroke-linecap="round"/>
+</svg>

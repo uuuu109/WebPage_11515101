@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 710" role="img" aria-labelledby="title desc">
+  <title id="title">晨光中的咖啡杯</title>
+  <desc id="desc">桌面上一杯咖啡，窗外是明亮的藍綠色天空與日光。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce9df"/><stop offset="1" stop-color="#a9c5b5"/></linearGradient>
+    <linearGradient id="table" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c38c64"/><stop offset="1" stop-color="#9b694c"/></linearGradient>
+    <linearGradient id="coffee" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#72452f"/><stop offset="1" stop-color="#35261e"/></linearGradient>
+    <filter id="shadow" x="-.3" y="-.3" width="1.7" height="1.8"><feGaussianBlur stdDeviation="17"/></filter>
+  </defs>
+  <rect width="760" height="710" fill="#e9e9dc"/>
+  <rect x="28" y="28" width="704" height="654" fill="url(#sky)"/>
+  <circle cx="575" cy="142" r="60" fill="#f0d7a4" opacity=".88"/>
+  <path d="M28 393c113-55 202-79 315-35 105 40 219 17 389-61v385H28z" fill="#78927d" opacity=".6"/>
+  <path d="M28 476c138-50 237-41 349-5 125 40 212 17 355-34v245H28z" fill="#526e5d" opacity=".74"/>
+  <path d="M485 28h16v435h-16zM28 261h704v15H28z" fill="#f6f2e7" opacity=".82"/>
+  <rect y="492" width="760" height="218" fill="url(#table)"/>
+  <path d="M40 535c130 26 233 13 347 0s222-2 333 23M75 629c115-15 245-12 366 7s188 19 278 4" fill="none" stroke="#d6aa83" stroke-width="3" opacity=".38"/>
+  <ellipse cx="384" cy="584" rx="202" ry="47" fill="#2e2b23" opacity=".24" filter="url(#shadow)"/>
+  <ellipse cx="380" cy="584" rx="194" ry="38" fill="#e2d3b7"/>
+  <ellipse cx="380" cy="578" rx="169" ry="27" fill="#f7f0df"/>
+  <path d="M260 345c7 5 10 10 10 18v148c0 52 43 92 96 92h29c54 0 98-40 98-92V363c0-8 3-13 10-18z" fill="#f6f0e2"/>
+  <path d="M493 381h23c43 0 70 29 70 68s-27 68-70 68h-26" fill="none" stroke="#f6f0e2" stroke-width="27"/>
+  <path d="M280 355h202v34H280z" fill="#ded2bc"/>
+  <ellipse cx="381" cy="356" rx="101" ry="25" fill="#ece3d1"/>
+  <ellipse cx="381" cy="359" rx="85" ry="16" fill="url(#coffee)"/>
+  <path d="M344 298c-21-26 20-40 4-68m44 67c-17-23 23-38 7-68m42 71c-14-23 19-38 7-57" fill="none" stroke="#fff8e9" stroke-linecap="round" stroke-width="7" opacity=".72"/>
+  <path d="M117 519c11-31 34-48 54-41 18 7 19 28 6 48 23-14 43-9 47 8 5 19-17 42-51 49-31 7-62-4-68-25-4-14 1-27 12-39z" fill="#607c62"/>
+  <path d="M127 568c23-23 47-42 77-65" fill="none" stroke="#e1e6cc" stroke-width="4" opacity=".7"/>
+</svg>
