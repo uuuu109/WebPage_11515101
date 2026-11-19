@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917"/>
+      <stop offset="100%" stop-color="#141210"/>
+    </linearGradient>
+    <linearGradient id="lanternGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="counterWood" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="50%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#3d1a04"/>
+    </linearGradient>
+    <radialGradient id="lightSpread" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#141210" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="200" r="380" fill="url(#lightSpread)"/>
+
+  <!-- Japanese Wooden Grid / Shoji Partition -->
+  <g stroke="#292524" stroke-width="3" opacity="0.6">
+    <line x1="80" y1="50" x2="80" y2="350"/>
+    <line x1="160" y1="50" x2="160" y2="350"/>
+    <line x1="240" y1="50" x2="240" y2="350"/>
+    <line x1="560" y1="50" x2="560" y2="350"/>
+    <line x1="640" y1="50" x2="640" y2="350"/>
+    <line x1="720" y1="50" x2="720" y2="350"/>
+    <line x1="40" y1="120" x2="760" y2="120"/>
+    <line x1="40" y1="200" x2="760" y2="200"/>
+    <line x1="40" y1="280" x2="760" y2="280"/>
+  </g>
+
+  <!-- Hanging Japanese Lanterns -->
+  <!-- Left Lantern -->
+  <g transform="translate(180, 40)">
+    <line x1="30" y1="0" x2="30" y2="40" stroke="#78350f" stroke-width="2"/>
+    <rect x="10" y="40" width="40" height="70" rx="8" fill="url(#lanternGlow)"/>
+    <line x1="10" y1="55" x2="50" y2="55" stroke="#78350f" stroke-width="2"/>
+    <line x1="10" y1="75" x2="50" y2="75" stroke="#78350f" stroke-width="2"/>
+    <line x1="10" y1="95" x2="50" y2="95" stroke="#78350f" stroke-width="2"/>
+    <text x="30" y="78" font-family="'Noto Serif TC', serif" font-size="16" font-weight="900" fill="#1c1917" text-anchor="middle">旬</text>
+  </g>
+
+  <!-- Right Lantern -->
+  <g transform="translate(580, 40)">
+    <line x1="30" y1="0" x2="30" y2="40" stroke="#78350f" stroke-width="2"/>
+    <rect x="10" y="40" width="40" height="70" rx="8" fill="url(#lanternGlow)"/>
+    <line x1="10" y1="55" x2="50" y2="55" stroke="#78350f" stroke-width="2"/>
+    <line x1="10" y1="75" x2="50" y2="75" stroke="#78350f" stroke-width="2"/>
+    <line x1="10" y1="95" x2="50" y2="95" stroke="#78350f" stroke-width="2"/>
+    <text x="30" y="78" font-family="'Noto Serif TC', serif" font-size="16" font-weight="900" fill="#1c1917" text-anchor="middle">炭</text>
+  </g>
+
+  <!-- Noren Curtain at Center Top -->
+  <g transform="translate(290, 0)">
+    <rect x="0" y="0" width="220" height="15" fill="#292524"/>
+    <path d="M 10 15 L 70 15 L 70 110 L 10 110 Z" fill="#1c1917" stroke="#44403c" stroke-width="2"/>
+    <path d="M 80 15 L 140 15 L 140 110 L 80 110 Z" fill="#1c1917" stroke="#44403c" stroke-width="2"/>
+    <path d="M 150 15 L 210 15 L 210 110 L 150 110 Z" fill="#1c1917" stroke="#44403c" stroke-width="2"/>
+    <text x="40" y="75" font-family="'Noto Serif TC', serif" font-size="22" font-weight="900" fill="#f59e0b" text-anchor="middle">烤</text>
+    <text x="110" y="75" font-family="'Noto Serif TC', serif" font-size="22" font-weight="900" fill="#f59e0b" text-anchor="middle">鹹</text>
+    <text x="180" y="75" font-family="'Noto Serif TC', serif" font-size="22" font-weight="900" fill="#f59e0b" text-anchor="middle">魚</text>
+  </g>
+
+  <!-- Charcoal Grill Smoke / Warm Atmosphere -->
+  <path d="M 360 270 Q 380 230 400 240 T 440 190" stroke="#fef3c7" stroke-width="4" fill="none" opacity="0.3" stroke-linecap="round"/>
+  <path d="M 380 270 Q 410 220 390 190 T 420 150" stroke="#f59e0b" stroke-width="3" fill="none" opacity="0.25" stroke-linecap="round"/>
+
+  <!-- Bar Counter (板前吧檯) -->
+  <polygon points="0,340 800,340 800,420 0,420" fill="url(#counterWood)"/>
+  <rect x="0" y="340" width="800" height="12" fill="#92400e"/>
+  <!-- Front Paneling of Counter -->
+  <rect x="0" y="420" width="800" height="80" fill="#292524"/>
+  <g stroke="#1c1917" stroke-width="4">
+    <line x1="100" y1="420" x2="100" y2="500"/>
+    <line x1="200" y1="420" x2="200" y2="500"/>
+    <line x1="300" y1="420" x2="300" y2="500"/>
+    <line x1="400" y1="420" x2="400" y2="500"/>
+    <line x1="500" y1="420" x2="500" y2="500"/>
+    <line x1="600" y1="420" x2="600" y2="500"/>
+    <line x1="700" y1="420" x2="700" y2="500"/>
+  </g>
+
+  <!-- Tableware on Counter -->
+  <!-- Plate with grilled fish on the counter -->
+  <ellipse cx="400" cy="355" rx="90" ry="16" fill="#1c1917" stroke="#d97706" stroke-width="2"/>
+  <path d="M 330 355 Q 400 345 470 355 Q 400 365 330 355 Z" fill="#b45309"/>
+  <!-- Lemon Wedge -->
+  <path d="M 335 352 A 10 10 0 0 1 345 345 Z" fill="#fde68a"/>
+  <!-- Cup of Tea -->
+  <rect x="230" y="335" width="28" height="26" rx="4" fill="#292524" stroke="#d97706" stroke-width="1.5"/>
+  <ellipse cx="244" cy="336" rx="14" ry="4" fill="#78350f"/>
+  <!-- Chopstick Rest -->
+  <rect x="520" y="356" width="30" height="6" rx="3" fill="#92400e"/>
+  <line x1="510" y1="358" x2="560" y2="358" stroke="#fef3c7" stroke-width="2"/>
+
+  <!-- Warm Text Overlay Badge -->
+  <rect x="250" y="445" width="300" height="38" rx="19" fill="#141210" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="400" y="469" font-family="'Noto Sans TC', sans-serif" font-size="14" font-weight="700" fill="#fef3c7" text-anchor="middle">
+    職人炭火現烤・板前溫暖席位
+  </text>
+</svg>
