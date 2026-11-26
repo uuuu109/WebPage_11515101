@@ -12,6 +12,10 @@
   --yellow-glow: #FEF3C7;
   --yellow-accent: #B45309;
 
+  --coffee-light: #C8A27A;
+  --coffee-hover: #B5895E;
+  --coffee-soft: #E6D5C3;
+
   --charcoal-900: #141210;
   --charcoal-800: #1C1917;
   --charcoal-700: #292524;
@@ -195,25 +199,25 @@ img {
   width: 100%;
 }
 
-.nav-cta {
+.site-nav .nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 8px 18px;
-  background: var(--charcoal-900);
-  color: var(--yellow-light) !important;
-  border-radius: var(--radius-full);
-  font-size: 0.88rem !important;
-  font-weight: 700 !important;
+  background: var(--coffee-light);
+  color: var(--charcoal-900);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
-.nav-cta::after {
-  display: none !important;
+.site-nav .nav-cta::after {
+  display: none;
 }
 
-.nav-cta:hover {
-  background: var(--yellow-primary) !important;
-  color: var(--charcoal-900) !important;
+.site-nav .nav-cta:hover {
+  background: var(--coffee-hover);
+  color: var(--charcoal-900);
 }
 
 /* 漢堡按鈕 (Mobile Hamburger) */
@@ -278,7 +282,7 @@ img {
   justify-content: center;
   gap: 8px;
   padding: 13px 26px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
@@ -287,24 +291,25 @@ img {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--yellow-primary), var(--yellow-dark));
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+  background: linear-gradient(135deg, #D4B28C, var(--coffee-light));
+  color: var(--charcoal-900);
+  box-shadow: 0 4px 14px rgba(181, 137, 94, 0.3);
 }
 
 .button-primary:hover {
+  background: var(--coffee-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 8px 20px rgba(181, 137, 94, 0.4);
 }
 
 .button-secondary {
-  background: var(--charcoal-900);
-  color: var(--yellow-light);
-  border-color: var(--charcoal-700);
+  background: var(--coffee-soft);
+  color: var(--charcoal-900);
+  border-color: var(--coffee-light);
 }
 
 .button-secondary:hover {
-  background: var(--yellow-primary);
+  background: var(--coffee-light);
   color: var(--charcoal-900);
   transform: translateY(-2px);
 }
@@ -1117,10 +1122,12 @@ img {
     display: none;
   }
 
-  .nav-cta {
+  .site-nav .nav-cta {
     justify-content: center;
     width: 100%;
     margin-top: 8px;
+    padding: 10px 18px;
+    border-bottom: none;
   }
 
   .feature-grid,
