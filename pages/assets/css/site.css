@@ -738,6 +738,54 @@ img {
   object-fit: cover;
 }
 
+/* 品牌理念區塊（限定作用於 .philosophy-section） */
+.philosophy-section {
+  padding-bottom: 72px;
+}
+
+.philosophy-section .philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.philosophy-section .philosophy-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: var(--transition);
+}
+
+.philosophy-section .philosophy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--yellow-primary);
+}
+
+.philosophy-section .philosophy-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--yellow-dark);
+  margin-bottom: 12px;
+}
+
+.philosophy-section .philosophy-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--charcoal-900);
+  margin-bottom: 10px;
+}
+
+.philosophy-section .philosophy-card p {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
 .closing-cta {
   display: flex;
   align-items: center;
@@ -1025,7 +1073,8 @@ img {
     gap: 36px;
   }
 
-  .values-grid {
+  .values-grid,
+  .philosophy-section .philosophy-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1075,7 +1124,8 @@ img {
   }
 
   .feature-grid,
-  .values-grid {
+  .values-grid,
+  .philosophy-section .philosophy-grid {
     grid-template-columns: 1fr;
   }
 
